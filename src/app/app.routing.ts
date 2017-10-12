@@ -12,6 +12,7 @@ import { RequestspaceComponent } from './components/requestspace/requestspace.co
 
 
 const APP_ROUTES: Routes = [
+  { path: 'home', component: HomeComponent },
   { path: 'request', component: RequestComponent },
   { path: 'addcategory', component: AddcategoryComponent },
   { path: 'addevents', component: AddeventsComponent },
@@ -20,7 +21,7 @@ const APP_ROUTES: Routes = [
   { path: 'listevents', component: ListeventsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'requestspace', component: RequestspaceComponent },
-  { path: '**', pathMatch: 'full', redirectTo: '/' }
+  { path: '**', pathMatch: 'full', redirectTo: '/home' }
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);

@@ -18,6 +18,7 @@ import { AddeventsComponent } from './components/addevents/addevents.component';
 import { ListeventsComponent } from './components/listevents/listevents.component';
 import { RequestspaceComponent } from './components/requestspace/requestspace.component';
 import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LoginComponent } from './components/login/login.component';
     AddeventsComponent,
     ListeventsComponent,
     RequestspaceComponent,
-    LoginComponent
+    LoginComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

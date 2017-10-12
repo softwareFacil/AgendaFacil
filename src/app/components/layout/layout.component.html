@@ -1,0 +1,112 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened="false">
+
+    <mat-toolbar class="top_logo">
+      <span>
+        <img alt="Logo">
+      </span>
+    </mat-toolbar>
+
+    <mat-toolbar class="top_user">
+      <span>
+        <img src="http://coding.infoconex.com/Custom/Themes/Standard/src/img/logo.png" alt="User">
+      </span>
+      <mat-toolbar-row>
+        <span>Organizacion</span>
+        <span class="user-mail">
+          cgonzalez2013@alu.uct.cl
+          <mat-icon color="accent" matToolTip="Email Verificado!">
+            verified_user
+          </mat-icon>
+        </span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="vertical-menu" routerLinkActive="active">
+      <a class="vertical-menu-item" [routerLink]="['../home']">
+        <mat-icon>home</mat-icon>
+        Inicio
+      </a>
+    </div>
+
+    <div class="vertical-menu" routerLinkActive="active">
+      <a class="vertical-menu-item" [routerLink]="['../request']">
+        <mat-icon>inbox</mat-icon>
+        Solicitudes
+      </a>
+    </div>
+
+    <div class="vertical-menu" routerLinkActive="active">
+      <a class="vertical-menu-item" [routerLink]="['../addcategory']">
+        <mat-icon>add</mat-icon>
+        Crear Categoria
+      </a>
+    </div>
+
+    <div class="vertical-menu" routerLinkActive="active">
+      <a class="vertical-menu-item" [routerLink]="['../listcategory']">
+        <mat-icon>format_list_bulleted</mat-icon>
+        Listar Categoria
+      </a>
+    </div>
+
+    <div class="vertical-menu" routerLinkActive="active">
+      <a class="vertical-menu-item" [routerLink]="['../addspace']">
+        <mat-icon>add_location</mat-icon>
+        Crear Espacios
+      </a>
+    </div>
+
+    <div class="vertical-menu" routerLinkActive="active">
+      <a class="vertical-menu-item" [routerLink]="['../addevents']">
+        <mat-icon>event</mat-icon>
+        Crear Eventos
+      </a>
+    </div>
+
+    <div class="vertical-menu" routerLinkActive="active">
+      <a class="vertical-menu-item" [routerLink]="['../listevents']">
+        <mat-icon>event_available</mat-icon>
+        Listar Eventos
+      </a>
+    </div>
+
+    <div class="vertical-menu" routerLinkActive="active">
+      <a class="vertical-menu-item" [routerLink]="['../requestspace']">
+        <mat-icon>location_on</mat-icon>
+        Solicitar Espacio
+      </a>
+    </div>
+
+    <div class="vertical-menu out">
+      <a class="vertical-menu-item" [routerLink]="['../login']">
+        <i class="fa fa-sign-out"></i>
+        Salir
+      </a>
+    </div>
+
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <button class="hamburger" mat-button (click)="sidenav.toggle()">
+      <mat-icon class="mat-icon">menu</mat-icon>
+    </button>
+
+    <form class="search-form">
+      <mat-form-field class="search-full-width">
+        <input matInput placeholder="Buscar">
+      </mat-form-field>
+    </form>
+
+    <button class="search" mat-button>
+      <mat-icon class="mat-icon">search</mat-icon>
+    </button>
+
+    <button class="sort" mat-button>
+      <mat-icon class="mat-icon">sort</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <router-outlet></router-outlet>
+
+</mat-sidenav-container>
