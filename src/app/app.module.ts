@@ -45,6 +45,7 @@ import { LayoutComponent } from './components/layout/layout.component';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
+    MatInputModule,
     APP_ROUTING
   ],
   providers: [],
