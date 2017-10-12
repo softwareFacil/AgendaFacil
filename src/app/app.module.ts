@@ -1,0 +1,51 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatInputModule } from '@angular/material';
+
+import { APP_ROUTING } from './app.routing';
+import { RequestComponent } from './components/request/request.component';
+import { AddcategoryComponent } from './components/addcategory/addcategory.component';
+import { ListcategoryComponent } from './components/listcategory/listcategory.component';
+import { AddspaceComponent } from './components/addspace/addspace.component';
+import { AddeventsComponent } from './components/addevents/addevents.component';
+import { ListeventsComponent } from './components/listevents/listevents.component';
+import { RequestspaceComponent } from './components/requestspace/requestspace.component';
+import { LoginComponent } from './components/login/login.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    RequestComponent,
+    AddcategoryComponent,
+    ListcategoryComponent,
+    AddspaceComponent,
+    AddeventsComponent,
+    ListeventsComponent,
+    RequestspaceComponent,
+    LoginComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    APP_ROUTING
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
