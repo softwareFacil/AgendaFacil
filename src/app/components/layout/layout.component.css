@@ -20,6 +20,7 @@ mat-sidenav{
   position: absolute;
   right: 220px;
   font-size: 18px;
+  color: white;
 }
 
 .search-full-width {
