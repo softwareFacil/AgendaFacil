@@ -135,3 +135,16 @@ h2 {
         border-radius: 50%;
         margin-right: 0.6em;
     }
+
+.body{
+
+}
+.cardDesing{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 350px;
+  height: 400px;
+}
+mat-card{
+  margin: 15px;
+}
