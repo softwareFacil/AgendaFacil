@@ -1,3 +1,6 @@
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
+@import 'https://fonts.googleapis.com/css?family=Roboto:700,400';
+
 .body{
   height: 500px;
   position: relative;
@@ -17,4 +20,27 @@ mat-card{
 div.inline {
   float:left;
 }
-.clearBoth { clear:both; }
+.clearBoth {
+  clear:both;
+}
+.share{
+  float: right;
+  position: relative;
+  margin-top: -42px;
+
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  outline: 0;
+
+  box-shadow:
+        0 2px 4px rgba(0,0,0, 0.12),
+        0 2px 4px rgba(0,0,0, 0.24);
+}
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
