@@ -124,8 +124,10 @@ mat-sidenav{
 .vertical-menu-item:hover{
   background-color: #d6d6d6;
 }
-
+.menu{
+  position: relative;
+}
 .out .vertical-menu-item{
-  position: absolute;
+  position: fixed;
   bottom: 0px;
 }

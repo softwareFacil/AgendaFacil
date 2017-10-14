@@ -2,10 +2,11 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:700,400';
 
 .body{
-  height: 500px;
+  height: 700px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  /*overflow-y: scroll;*/
 }
 .cardDesing{
 
