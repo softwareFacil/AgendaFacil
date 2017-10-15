@@ -9,6 +9,7 @@ import { ListcategoryComponent } from './components/listcategory/listcategory.co
 import { ListeventsComponent } from './components/listevents/listevents.component';
 import { LoginComponent } from './components/login/login.component';
 import { RequestspaceComponent } from './components/requestspace/requestspace.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 
 const APP_ROUTES: Routes = [
@@ -19,9 +20,15 @@ const APP_ROUTES: Routes = [
   { path: 'addspace', component: AddspaceComponent },
   { path: 'listcategory', component: ListcategoryComponent },
   { path: 'listevents', component: ListeventsComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'requestspace', component: RequestspaceComponent },
+  { path: 'login', component: LoginComponent },
   { path: '**', pathMatch: 'full', redirectTo: '/home' }
 ];
 
+// const LOGIN_ROUTES: Routes = [
+//   { path: 'layout', component: LayoutComponent },
+//   { path: 'login', component: LoginComponent }
+// ];
+
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
+// export const LOGIN_ROUTING = RouterModule.forRoot(LOGIN_ROUTES);
