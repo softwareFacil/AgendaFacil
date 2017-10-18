@@ -30,5 +30,6 @@ const APP_ROUTES: Routes = [
 //   { path: 'login', component: LoginComponent }
 // ];
 
+export const ROUTINGPROVIDERS: any[] = [];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
 // export const LOGIN_ROUTING = RouterModule.forRoot(LOGIN_ROUTES);
