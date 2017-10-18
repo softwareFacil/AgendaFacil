@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -47,7 +46,6 @@ import { LayoutComponent } from './components/layout/layout.component';
     MatIconModule,
     MatSidenavModule,
     MatInputModule,
-    MDBBootstrapModule.forRoot(),
     APP_ROUTING
   ],
   // schemas: [ NO_ERRORS_SCHEMA ],
