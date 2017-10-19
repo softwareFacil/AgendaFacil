@@ -6,19 +6,38 @@
 
       <h1>Ingresar</h1>
 
-      <form class="login-form">
+      <form class="login-form" loginForm="ngForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="login-full-width">
-          <input type="email" matInput placeholder="Correo" value="">
+          <input type="text" matInput placeholder="Correo" value="" name="user"
+          #name="ngModel" [(ngModel)]="user.name">
+
+          <span *ngIf="!name.valid && name.touched">
+            El usuarios es obligatoria
+          </span>
         </mat-form-field>
 
         <mat-form-field class="login-full-width">
-          <input type="password" matInput placeholder="Contraseña" value="">
+          <input type="password" matInput placeholder="Contraseña" value="" name="password"
+          #password="ngModel" [(ngModel)]="user.password">
+
+          <span *ngIf="!password.valid && password.touched">
+            La password es obligatoria
+          </span>
         </mat-form-field>
 
-        <div class="button-row">
-          <button mat-raised-button>Basic</button>
-        </div>
+        <button type="submit" mat-raised-button>Entrar</button>
+
       </form>
+
+      <br>
+
+      <div class="alert alert-success" *ngIf="status == 'success'">
+        Login correcto!!
+      </div>
+
+      <div class="alert alert-danger" *ngIf="status == 'error'">
+        Login incorrecto!!
+      </div>
 
     </div>
 
