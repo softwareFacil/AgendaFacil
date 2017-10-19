@@ -2,14 +2,13 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:700,400';
 
 .body{
-  height: 700px;
+  /*height: 700px;
   position: relative;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;*/
   /*overflow-y: scroll;*/
 }
 .cardDesing{
-
   margin-top: 15px;
   margin-bottom: 15px;
   width: 320px;
@@ -18,7 +17,7 @@
 mat-card{
   margin: 15px;
 }
-div.inline {
+.inline {
   float:left;
 }
 .clearBoth {
@@ -45,3 +44,12 @@ div.inline {
 }
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.center{
+  display: table;
+}
+.body{
+  /*position: fixed;*/
+  display: inline-block;
+  margin: auto;
+}
