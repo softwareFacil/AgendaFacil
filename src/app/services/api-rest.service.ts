@@ -24,7 +24,7 @@ export class UserService{
 
     let params = JSON.stringify( user_to_login );
     let headers = new Headers({ 'Content-Type': 'application/json' });
-
+    console.log(params)
     return this._http.post( this.url + '/login/', params, { headers:headers } )
                      .map( res => res.json() );
   }

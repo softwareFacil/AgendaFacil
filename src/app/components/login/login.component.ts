@@ -32,10 +32,12 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     //Loguear al usuario y obtener el objeto
+    console.log(this.user)
+
     this._userService.signup(this.user).subscribe(
       response => {
         this.identity = response.user;
-
+        console.log(this.identity)
         if ( !this.identity || !this.identity._id ) {
           alert( 'El usuario no se ha logueado correctamente' );
         }else{
