@@ -27,5 +27,4 @@ export class LayoutComponent implements OnInit {
     localStorage.clear();
     this.identity = null;
   }
-
 }
