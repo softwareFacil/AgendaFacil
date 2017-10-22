@@ -7,7 +7,7 @@ import { GLOBAL } from './global';
 @Injectable()
 export class UserService{
   public url: string;
-  public indetity;
+  public identity;
   public token;
   public type;
 
@@ -33,11 +33,11 @@ export class UserService{
     let identity = JSON.parse( localStorage.getItem( 'identity' ) );
 
     if ( identity != 'undefined' ) {
-      this.indetity = identity;
+      this.identity = identity;
     }else{
-      this.indetity = null;
+      this.identity = null;
     }
-    return this.indetity;
+    return this.identity;
   }
 
   getToken(){
