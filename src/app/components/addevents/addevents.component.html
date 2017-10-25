@@ -1,0 +1,85 @@
+
+<div class="container">
+    <br>
+    <h2>Nuevo evento</h2>
+    <!--  -->
+    <form>
+
+      <mat-form-field class="example-full-width">
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <button mat-raised-button (click)="picker.open()">Open</button>
+
+      <div class="form-group">
+        <label for="subject">Nombre</label>
+        <input type="text" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Descripcion</label>
+        <input type="text" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Fecha de inicio</label>
+        <input type="text" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Fecha de termino</label>
+        <input type="text" class="form-control" required>
+      </div>
+
+
+      <div class="form-group">
+        <label for="content">Latitud</label>
+        <input type="text" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Longitud</label>
+        <input type="text" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Región</label>
+        <input type="text" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Ciudad</label>
+        <input type="text" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="content">dirección</label>
+        <input type="text" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Nombre de organización encargada</label>
+        <input type="text" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Fono contacto</label>
+        <input type="text" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <div class="checkbox">
+          <label for="isImportant">
+            <input type="checkbox"> Activar
+          </label>
+        </div>
+      </div>   
+
+    <div class="card-group">
+          <button type="submit" class="btn btn-default">Registrar este evento</button>
+    </div>
+
+    <br>
+    </form>
+
+</div>
