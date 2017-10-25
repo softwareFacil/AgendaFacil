@@ -22,47 +22,18 @@
 
 <div class="container">
   <div class="card-columns">
-    <div class="card">
-      <mat-card>
-        <mat-card-header>
-          <img mat-card-avatar src="https://source.unsplash.com/random/200x200">
-          <mat-card-title>Nombre Organizacion</mat-card-title>
-          <mat-card-subtitle>Tipo de Evento</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="https://source.unsplash.com/random/800x600">
-        <mat-card-content>
-          <h2>Titulo evento</h2>
-          <p>Something pretty...</p>
-        </mat-card-content>
-      </mat-card>
-    </div>
 
-    <div class="card">
+    <div class="card" *ngFor="let item of events">
       <mat-card>
         <mat-card-header>
           <img mat-card-avatar src="https://source.unsplash.com/random/200x200">
-          <mat-card-title>Nombre Organizacion</mat-card-title>
+          <mat-card-title>{{ item.org }}</mat-card-title>
           <mat-card-subtitle>Tipo de Evento</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image src="https://source.unsplash.com/random/800x600">
         <mat-card-content>
-          <h2>Titulo evento</h2>
-          <p>Something pretty...</p>
-        </mat-card-content>
-      </mat-card>
-    </div>
-
-    <div class="card">
-      <mat-card>
-        <mat-card-header>
-          <img mat-card-avatar src="https://source.unsplash.com/random/200x200">
-          <mat-card-title>Nombre Organizacion</mat-card-title>
-          <mat-card-subtitle>Tipo de Evento</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="https://source.unsplash.com/random/800x600">
-        <mat-card-content>
-          <h2>Titulo evento</h2>
-          <p>Something pretty...</p>
+          <h2>{{ item.name }}</h2>
+          <p>{{ item.descripcion }}</p>
         </mat-card-content>
       </mat-card>
     </div>
