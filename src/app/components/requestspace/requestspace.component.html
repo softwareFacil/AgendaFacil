@@ -1,26 +1,50 @@
 
-<div class="container">
-    <br>
-    <h2>Solicitar espacio</h2>
-    <!-- AÑADIR DIV PARA BORDES-->
+<div id="enter">
 
-    <form>
+  <h1>Solicitar espacio</h1>
 
-        <div class="form-group">
-          <label for="subject">Nombre de lugar</label>
-          <input type="text" class="form-control" required>
-        </div>
+  <hr>
 
-        <div class="form-group">
-          <label for="content">Mapa</label>
-          <input type="text" class="form-control" required>
-        </div>
+  <form class="login-form" eventForm="ngForm">
+    <mat-form-field class="login-full-width">
+      <label>Nombre de lugar</label> <input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
 
-        <div class="card-group">
-              <button type="submit" class="btn btn-default">Solicitar espacio</button>
-        </div>
+    <mat-form-field class="example-full-width">
+      <label>Ciudad</label>
+      <input matInput type="text"
+      [options]='option'
+      (setAddress) = "getAddress($event)"
+      (street_number) = 'street_number=$event'
+      (street)= 'street=$event'
+      (city)= 'city=$event'
+      (state)='state=$event'
+      (district)='district=$event'
+      (country)='country=$event'
+      (postal_code)='postal_code=$event'
+      (lat)='lat=$event'
+      (lng)='lng=$event'
+      (adr_address)='adr_address=$event'
+      (name)='name=$event'
+      (place_id)='place_id=$event'
+      (types)='types=$event'
+      (url)='url=$event'
+      (utc_offset)='utc_offset=$event'
+      (vicinity)='vicinity=$event'
+      (photos)='photos=$event'
+      (airport)='airport=$event'
+      (CountryCodes)='CountryCodes=$event'
+      id="autocomplete"
+      ng2-google-place-autocomplete/>
+    </mat-form-field>
 
-    <br>
-    </form>
+    <mat-form-field class="login-full-width">
+      <label>Dirección</label> <input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
+
+
+    <button type="submit" mat-raised-button>Solicitar espacio</button>
+
+  </form>
 
 </div>
