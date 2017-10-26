@@ -28,3 +28,7 @@
 .example-full-width {
   width: 100%;
 }
+
+agm-map {
+  height: 300px;
+}

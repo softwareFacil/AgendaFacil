@@ -28,6 +28,7 @@ import { ListeventsComponent } from './components/listevents/listevents.componen
 import { RequestspaceComponent } from './components/requestspace/requestspace.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,10 @@ import { LayoutComponent } from './components/layout/layout.component';
     LayoutComponent
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyDhkr1RB2_KNBYuWFzE61RT1w3I41KC0cI",
+      libraries: ["places"]
+    }),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -57,7 +62,7 @@ import { LayoutComponent } from './components/layout/layout.component';
     MatSidenavModule,
     MatInputModule,
     MatAutocompleteModule,
-    GooglePlaceModule,
+    // GooglePlaceModule,
     APP_ROUTING
   ],
   // schemas: [ NO_ERRORS_SCHEMA ],

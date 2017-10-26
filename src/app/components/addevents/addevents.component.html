@@ -99,31 +99,12 @@
 
     <mat-form-field class="example-full-width">
       <label>Lugar</label>
-      <input matInput type="text"
-      [options]='option'
-      (setAddress) = "getAddress($event)"
-      (street_number) = 'street_number=$event'
-      (street)= 'street=$event'
-      (city)= 'city=$event'
-      (state)='state=$event'
-      (district)='district=$event'
-      (country)='country=$event'
-      (postal_code)='postal_code=$event'
-      (lat)='lat=$event'
-      (lng)='lng=$event'
-      (adr_address)='adr_address=$event'
-      (name)='name=$event'
-      (place_id)='place_id=$event'
-      (types)='types=$event'
-      (url)='url=$event'
-      (utc_offset)='utc_offset=$event'
-      (vicinity)='vicinity=$event'
-      (photos)='photos=$event'
-      (airport)='airport=$event'
-      (CountryCodes)='CountryCodes=$event'
-      id="autocomplete"
-      ng2-google-place-autocomplete/>
+      <input matInput autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search [formControl]="searchControl">
     </mat-form-field>
+    <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom" (mapClick)="placeMarker($event,infoWindow)">
+      <agm-marker [latitude]="latitudeMark" [longitude]="longitudeMark"></agm-marker>
+      <agm-info-window #infoWindow></agm-info-window>
+    </agm-map>
 
     <mat-form-field class="login-full-width">
       <label>Telefono</label> <input type="text" matInput placeholder="" value="" >
