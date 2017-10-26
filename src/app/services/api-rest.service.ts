@@ -9,7 +9,6 @@ export class UserService{
   public url: string;
   public identity;
   public token;
-  public type;
 
   constructor(
     private _http: Http
@@ -21,7 +20,6 @@ export class UserService{
     if( gettoken != null ){
       user_to_login.gettoken = gettoken;
     }
-
     let params = JSON.stringify( user_to_login );
     let headers = new Headers({ 'Content-Type': 'application/json' });
     console.log(params)
@@ -54,17 +52,6 @@ export class UserService{
       this.token = null;
     }
     return this.token;
-  }
-
-  getType(){
-    let type = localStorage.getItem( 'type' );
-
-    if ( type != 'undefined' ) {
-      this.type = type;
-    }else{
-      this.type = null;
-    }
-    return this.type;
   }
 
 }

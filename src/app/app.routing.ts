@@ -1,4 +1,10 @@
+import { ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+
+
+
+
 
 import { HomeComponent } from './components/home/home.component';
 import { RequestComponent } from './components/request/request.component';
@@ -22,14 +28,9 @@ const APP_ROUTES: Routes = [
   { path: 'listevents', component: ListeventsComponent },
   { path: 'requestspace', component: RequestspaceComponent },
   { path: 'login', component: LoginComponent },
-  { path: '**', pathMatch: 'full', redirectTo: '/home' }
+  { path: '**', pathMatch: 'full', component: HomeComponent },
 ];
 
-// const LOGIN_ROUTES: Routes = [
-//   { path: 'layout', component: LayoutComponent },
-//   { path: 'login', component: LoginComponent }
-// ];
 
 export const ROUTINGPROVIDERS: any[] = [];
-export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
-// export const LOGIN_ROUTING = RouterModule.forRoot(LOGIN_ROUTES);
+export const APP_ROUTING: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES, { useHash: true });

@@ -18,7 +18,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this._apiService.getEvents().subscribe( response => { this.events = response.events; });
-    console.log(this.events);
+  }
+  ngDoCheck(){
+
   }
 
 }

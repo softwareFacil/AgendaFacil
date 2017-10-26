@@ -46,7 +46,9 @@ mat-card{
   margin: auto;
 }*/
 
-
+.card{
+  font-size: 4px;
+}
 
 .container{
   margin-top: 20px;

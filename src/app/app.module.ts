@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import { ModuleWithProviders } from '@angular/core';
+import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -51,7 +53,9 @@ import { LayoutComponent } from './components/layout/layout.component';
     APP_ROUTING
   ],
   // schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
