@@ -1,8 +1,7 @@
-
+<!--
 <div class="container">
     <br>
     <h2>Nuevo evento</h2>
-    <!--  -->
     <form>
 
 
@@ -68,7 +67,7 @@
             <input type="checkbox"> Activar
           </label>
         </div>
-      </div>   
+      </div>
 
     <div class="card-group">
           <button type="submit" class="btn btn-default">Registrar este evento</button>
@@ -76,5 +75,56 @@
 
     <br>
     </form>
+
+</div> -->
+
+<div id="enter">
+
+  <h1>Crear Evento</h1>
+
+  <hr>
+
+  <form class="login-form" loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="login-full-width">
+      Nombre <input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
+
+    <mat-form-field class="login-full-width">
+      Descripción <input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
+
+    <mat-form-field class="login-full-width">
+      Fecha del evento <input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
+
+    <mat-form-field class="login-full-width">
+      Region <input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
+
+    <mat-form-field class="login-full-width">
+      Ciudad <input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
+
+    <mat-form-field class="login-full-width">
+      Lugar <input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
+
+    <mat-form-field class="login-full-width">
+      Nº de telefono <input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button>Entrar</button>
+
+  </form>
+
+  <br>
+
+  <div class="alert alert-success" *ngIf="status == 'success'">
+    Login correcto!!
+  </div>
+
+  <div class="alert alert-danger" *ngIf="status == 'error'">
+    Login incorrecto!!
+  </div>
 
 </div>
