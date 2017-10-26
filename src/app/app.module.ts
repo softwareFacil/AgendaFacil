@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { ModuleWithProviders } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule} from '@angular/forms';
+import { GooglePlaceModule } from 'ng2-google-place-autocomplete';
 
 
 import { AppComponent } from './app.component';
@@ -12,6 +14,9 @@ import { HomeComponent } from './components/home/home.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatInputModule } from '@angular/material';
+import { MatAutocompleteModule } from '@angular/material';
+import { FormControl } from '@angular/forms';
+
 
 import { APP_ROUTING } from './app.routing';
 import { RequestComponent } from './components/request/request.component';
@@ -41,6 +46,7 @@ import { LayoutComponent } from './components/layout/layout.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -50,6 +56,8 @@ import { LayoutComponent } from './components/layout/layout.component';
     MatIconModule,
     MatSidenavModule,
     MatInputModule,
+    MatAutocompleteModule,
+    GooglePlaceModule,
     APP_ROUTING
   ],
   // schemas: [ NO_ERRORS_SCHEMA ],

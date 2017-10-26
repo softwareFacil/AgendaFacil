@@ -84,47 +84,57 @@
 
   <hr>
 
-  <form class="login-form" loginForm="ngForm" (ngSubmit)="onSubmit()">
+  <form class="login-form" eventForm="ngForm">
     <mat-form-field class="login-full-width">
       Nombre <input type="text" matInput placeholder="" value="" >
     </mat-form-field>
 
     <mat-form-field class="login-full-width">
-      Descripción <input type="text" matInput placeholder="" value="" >
+      Tipo de evento <input type="text" matInput placeholder="" value="" >
     </mat-form-field>
 
     <mat-form-field class="login-full-width">
       Fecha del evento <input type="text" matInput placeholder="" value="" >
     </mat-form-field>
 
-    <mat-form-field class="login-full-width">
-      Region <input type="text" matInput placeholder="" value="" >
+    <mat-form-field class="example-full-width">
+      Lugar
+      <input matInput type="text"
+      [options]='option'
+      (setAddress) = "getAddress($event)"
+      (street_number) = 'street_number=$event'
+      (street)= 'street=$event'
+      (city)= 'city=$event'
+      (state)='state=$event'
+      (district)='district=$event'
+      (country)='country=$event'
+      (postal_code)='postal_code=$event'
+      (lat)='lat=$event'
+      (lng)='lng=$event'
+      (adr_address)='adr_address=$event'
+      (name)='name=$event'
+      (place_id)='place_id=$event'
+      (types)='types=$event'
+      (url)='url=$event'
+      (utc_offset)='utc_offset=$event'
+      (vicinity)='vicinity=$event'
+      (photos)='photos=$event'
+      (airport)='airport=$event'
+      (CountryCodes)='CountryCodes=$event'
+      id="autocomplete"
+      ng2-google-place-autocomplete/>
     </mat-form-field>
 
     <mat-form-field class="login-full-width">
-      Ciudad <input type="text" matInput placeholder="" value="" >
+      Telefono <input type="text" matInput placeholder="" value="" >
     </mat-form-field>
 
     <mat-form-field class="login-full-width">
-      Lugar <input type="text" matInput placeholder="" value="" >
-    </mat-form-field>
-
-    <mat-form-field class="login-full-width">
-      Nº de telefono <input type="text" matInput placeholder="" value="" >
+      Descripción <textarea matInput></textarea>
     </mat-form-field>
 
     <button type="submit" mat-raised-button>Entrar</button>
 
   </form>
-
-  <br>
-
-  <div class="alert alert-success" *ngIf="status == 'success'">
-    Login correcto!!
-  </div>
-
-  <div class="alert alert-danger" *ngIf="status == 'error'">
-    Login incorrecto!!
-  </div>
 
 </div>

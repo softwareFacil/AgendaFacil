@@ -32,6 +32,11 @@ export class UserService{
                       .map( res => res.json());
   }
 
+  getEventsImg(imageFile:String){
+    return  this._http.get( this.url + '/get-img/' + imageFile )
+                      .map( res => res.json());
+  }
+
   getIdentity(){
     let identity = JSON.parse( localStorage.getItem( 'identity' ) );
 

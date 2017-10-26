@@ -11,6 +11,7 @@ import { UserService } from '../../services/api-rest.service';
 export class HomeComponent implements OnInit {
 
   public events = [];
+  public img = 'http://agenda.publibarrio.cl:3789/api/get-img/';
 
   constructor(
     private _apiService: UserService
