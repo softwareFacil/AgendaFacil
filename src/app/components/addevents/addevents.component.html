@@ -86,19 +86,19 @@
 
   <form class="login-form" eventForm="ngForm">
     <mat-form-field class="login-full-width">
-      Nombre <input type="text" matInput placeholder="" value="" >
+      <label>Nombre</label> <input type="text" matInput placeholder="" value="" >
     </mat-form-field>
 
     <mat-form-field class="login-full-width">
-      Tipo de evento <input type="text" matInput placeholder="" value="" >
+      <label>Tipo de event</label>o <input type="text" matInput placeholder="" value="" >
     </mat-form-field>
 
     <mat-form-field class="login-full-width">
-      Fecha del evento <input type="text" matInput placeholder="" value="" >
+      <label>Fecha del evento</label> <input type="text" matInput placeholder="" value="" >
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      Lugar
+      <label>Lugar</label>
       <input matInput type="text"
       [options]='option'
       (setAddress) = "getAddress($event)"
@@ -126,11 +126,11 @@
     </mat-form-field>
 
     <mat-form-field class="login-full-width">
-      Telefono <input type="text" matInput placeholder="" value="" >
+      <label>Telefono</label> <input type="text" matInput placeholder="" value="" >
     </mat-form-field>
 
     <mat-form-field class="login-full-width">
-      Descripción <textarea matInput></textarea>
+      <label>Descripción</label> <textarea matInput></textarea>
     </mat-form-field>
 
     <button type="submit" mat-raised-button>Entrar</button>
