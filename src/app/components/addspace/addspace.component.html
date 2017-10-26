@@ -1,81 +1,71 @@
 
-<div class="container">
-    <br>
-    <h2>Nuevo evento</h2>
-    <!-- AÑADIR DIV PARA BORDES-->
+<div id="enter">
 
-    <form>
+  <h1>Crear Espacio</h1>
 
+  <hr>
 
-      <div class="form-group">
-        <label for="subject">Nombre</label>
-        <input type="text" class="form-control" required>
-      </div>
+  <form class="login-form" eventForm="ngForm">
+    <mat-form-field class="login-full-width">
+      <label>Nombre</label> <input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
 
-      <div class="form-group">
-        <label for="content">Descripcion</label>
-        <input type="text" class="form-control" required>
-      </div>
+    <mat-form-field class="login-full-width">
+      <label>dirección</label><input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
 
-      <div class="form-group">
-        <label for="content">Fecha de inicio</label>
-        <input type="text" class="form-control" required>
-      </div>
+    <mat-form-field class="login-full-width">
+      <label>Fecha de inicio</label> <input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
 
-      <div class="form-group">
-        <label for="content">Fecha de termino</label>
-        <input type="text" class="form-control" required>
-      </div>
+    <mat-form-field class="login-full-width">
+      <label>Fecha de termino</label> <input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
 
+    <mat-form-field class="example-full-width">
+      <label>Lugar</label>
+      <input matInput type="text"
+      [options]='option'
+      (setAddress) = "getAddress($event)"
+      (street_number) = 'street_number=$event'
+      (street)= 'street=$event'
+      (city)= 'city=$event'
+      (state)='state=$event'
+      (district)='district=$event'
+      (country)='country=$event'
+      (postal_code)='postal_code=$event'
+      (lat)='lat=$event'
+      (lng)='lng=$event'
+      (adr_address)='adr_address=$event'
+      (name)='name=$event'
+      (place_id)='place_id=$event'
+      (types)='types=$event'
+      (url)='url=$event'
+      (utc_offset)='utc_offset=$event'
+      (vicinity)='vicinity=$event'
+      (photos)='photos=$event'
+      (airport)='airport=$event'
+      (CountryCodes)='CountryCodes=$event'
+      id="autocomplete"
+      ng2-google-place-autocomplete/>
+    </mat-form-field>
 
-      <div class="form-group">
-        <label for="content">Latitud</label>
-        <input type="text" class="form-control" required>
-      </div>
+    <mat-form-field class="login-full-width">
+      <label>dirección</label><input type="text" matInput placeholder="" value="" >
+    </mat-form-field>
 
-      <div class="form-group">
-        <label for="content">Longitud</label>
-        <input type="text" class="form-control" required>
-      </div>
+    <mat-form-field class="login-full-width">
+      <label>Nombre de organización encargada</label> <textarea matInput></textarea>
+    </mat-form-field>
 
-      <div class="form-group">
-        <label for="content">Región</label>
-        <input type="text" class="form-control" required>
-      </div>
+    <mat-form-field class="login-full-width">
+      <label>Fono contacto</label> <textarea matInput></textarea>
+    </mat-form-field>
 
-      <div class="form-group">
-        <label for="content">Ciudad</label>
-        <input type="text" class="form-control" required>
-      </div>
+    <button type="submit" mat-raised-button>Registrar</button>
 
-      <div class="form-group">
-        <label for="content">dirección</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label for="content">Nombre de organización encargada</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label for="content">Fono contacto</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <div class="checkbox">
-          <label for="isImportant">
-            <input type="checkbox"> Activar
-          </label>
-        </div>
-      </div>   
-
-    <div class="card-group">
-          <button type="submit" class="btn btn-default">Solicitar espacio</button>
-    </div>
-
-    <br>
-    </form>
+  </form>
 
 </div>
+
+

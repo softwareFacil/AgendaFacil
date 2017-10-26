@@ -7,6 +7,7 @@ import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@a
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule} from '@angular/forms';
 import { GooglePlaceModule } from 'ng2-google-place-autocomplete';
+import {MatTableModule} from '@angular/material';
 
 
 import { AppComponent } from './app.component';
