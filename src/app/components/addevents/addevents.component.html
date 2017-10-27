@@ -1,108 +1,28 @@
-<!--
-<div class="container">
-    <br>
-    <h2>Nuevo evento</h2>
-    <form>
-
-
-      <div class="form-group">
-        <label for="subject">Nombre</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label for="content">Descripcion</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label for="content">Fecha de inicio</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label for="content">Fecha de termino</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-
-      <div class="form-group">
-        <label for="content">Latitud</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label for="content">Longitud</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label for="content">Región</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label for="content">Ciudad</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label for="content">dirección</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label for="content">Nombre de organización encargada</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label for="content">Fono contacto</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <div class="checkbox">
-          <label for="isImportant">
-            <input type="checkbox"> Activar
-          </label>
-        </div>
-      </div>
-
-    <div class="card-group">
-          <button type="submit" class="btn btn-default">Registrar este evento</button>
-    </div>
-
-    <br>
-    </form>
-
-</div> -->
-
 <div id="enter">
 
   <h1>Crear Evento</h1>
 
   <hr>
 
-  <form class="login-form" eventForm="ngForm">
-    <mat-form-field class="login-full-width">
+  <form class="event-form" eventForm="ngForm">
+    <mat-form-field class="event-full-width">
       <label>Nombre</label> <input type="text" matInput placeholder="" value="" >
     </mat-form-field>
 
-    <mat-form-field class="login-full-width">
+    <mat-form-field class="event-full-width">
       <label>Tipo de event</label>o <input type="text" matInput placeholder="" value="" >
     </mat-form-field>
 
-    <mat-form-field class="login-full-width">
+    <mat-form-field class="event-full-width">
       <label>Fecha del evento</label> <input type="text" matInput placeholder="" value="" >
     </mat-form-field>
 
-    <mat-form-field class="login-full-width">
+    <mat-form-field class="event-full-width">
       <label>Nombre del Lugar</label> <input type="text" matInput placeholder="" value="" >
       <i class="material-icons" matTooltip="Tooltip!">info</i>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="event-full-width">
       <label>Lugar</label>
       <input matInput autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search [formControl]="searchControl">
     </mat-form-field>
@@ -111,11 +31,11 @@
       <agm-data-layer #infoWindow></agm-data-layer>
     </agm-map>
 
-    <mat-form-field class="login-full-width">
+    <mat-form-field class="event-full-width">
       <label>Telefono</label> <input type="text" matInput placeholder="" value="" >
     </mat-form-field>
 
-    <mat-form-field class="login-full-width">
+    <mat-form-field class="event-full-width">
       <label>Descripción</label> <textarea matInput></textarea>
     </mat-form-field>
 
