@@ -63,16 +63,12 @@ export class AddeventsComponent implements OnInit {
       });
     }
 
-    placeMarker( $event, data = undefined){
+    placeMarker( $event, data){
       this.latitudeMark = $event.coords.lat;
       console.log(this.latitudeMark)
       this.longitudeMark = $event.coords.lng;
       console.log(this.longitudeMark)
-      if(this.infoMark){
-        this.infoMark.close();
-      }
-      this.infoMark = data;
-      console.log(this.infoMark)
+      console.log(data)
     }
 
     private setCurrentPosition() {

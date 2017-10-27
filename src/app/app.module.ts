@@ -7,7 +7,7 @@ import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@a
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule} from '@angular/forms';
 import { GooglePlaceModule } from 'ng2-google-place-autocomplete';
-import {MatTableModule} from '@angular/material';
+import { MatTableModule } from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -17,7 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatInputModule } from '@angular/material';
 import { MatAutocompleteModule } from '@angular/material';
 import { FormControl } from '@angular/forms';
-
+import { MatTooltipModule } from '@angular/material';
 
 import { APP_ROUTING } from './app.routing';
 import { RequestComponent } from './components/request/request.component';
@@ -63,6 +63,8 @@ import { AgmCoreModule } from '@agm/core';
     MatSidenavModule,
     MatInputModule,
     MatAutocompleteModule,
+    MatTooltipModule,
+    MatTableModule,
     // GooglePlaceModule,
     APP_ROUTING
   ],
