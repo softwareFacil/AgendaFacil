@@ -221,12 +221,12 @@ export class AddeventsComponent implements OnInit {
       // this.event.image = this.files[0].name;
     }
 
-    onSubmit(){
+    onSubmit( desc:string ){
       this.event.ubicacion.lat = this.latitudeMark;
       this.event.ubicacion.long = this.longitudeMark;
       this.event.org = this.identity.name;
       this.event.icon = this.identity.foto;
-
+      this.event.descripcion = desc;
       if (this.files) {
         this._userService.saveImg( [], this.files, 'image' )
             .then(( result: any ) => {
