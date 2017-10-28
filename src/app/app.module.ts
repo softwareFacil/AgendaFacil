@@ -16,6 +16,7 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIco
 import { MatAutocompleteModule } from '@angular/material';
 import { FormControl } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material';
+import { MatSnackBarModule } from '@angular/material';
 
 import { APP_ROUTING } from './app.routing';
 import { AppComponent } from './app.component';
@@ -30,6 +31,8 @@ import { RequestspaceComponent } from './components/requestspace/requestspace.co
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AgmCoreModule } from '@agm/core';
+
+
 
 @NgModule({
   declarations: [
@@ -65,6 +68,7 @@ import { AgmCoreModule } from '@agm/core';
     MatAutocompleteModule,
     MatTooltipModule,
     MatTableModule,
+    MatSnackBarModule,
     // GooglePlaceModule,
     APP_ROUTING
   ],

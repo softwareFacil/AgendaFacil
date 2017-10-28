@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
 
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-addevents',
@@ -144,7 +145,8 @@ export class AddeventsComponent implements OnInit {
     constructor(
       private mapsAPILoader: MapsAPILoader,
       private ngZone: NgZone,
-      private _userService: UserService
+      private _userService: UserService,
+      public snackBar: MatSnackBar
     ) {
       this.event = new Events( '','test','',{lat: 0,long: 0,nombre:''}, '','','','', '' );
       this.stateCtrl = new FormControl();
@@ -220,8 +222,6 @@ export class AddeventsComponent implements OnInit {
     }
 
     onSubmit(){
-      console.log(this.files)
-
       this.event.ubicacion.lat = this.latitudeMark;
       this.event.ubicacion.long = this.longitudeMark;
       this.event.org = this.identity.name;
@@ -234,19 +234,17 @@ export class AddeventsComponent implements OnInit {
              response => {
                if (response.events) {
                  this.status = 'El registro se a realizado correctamente';
-
+                 console.log( response.message );
+                 this.snackBar.open( response.message, 'close', { duration: 5000});
                }else{
                  this.status = 'Erros en el registro';
+                 console.log( response.message );
+                 this.snackBar.open( response.message, 'close', { duration: 2500});
                }
              },error => {
                console.log(<any>error);
              }
             );
           });
-
-
     }
-
-
-
 }
