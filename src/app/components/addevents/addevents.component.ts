@@ -227,24 +227,29 @@ export class AddeventsComponent implements OnInit {
       this.event.org = this.identity.name;
       this.event.icon = this.identity.foto;
 
-      this._userService.saveImg( [], this.files, 'image' )
-          .then(( result: any ) => {
-            this.event.image = result.image;
-            this._userService.saveEvent( this.event ).subscribe(
-             response => {
-               if (response.events) {
-                 this.status = 'El registro se a realizado correctamente';
-                 console.log( response.message );
-                 this.snackBar.open( response.message, 'close', { duration: 5000});
-               }else{
-                 this.status = 'Erros en el registro';
-                 console.log( response.message );
-                 this.snackBar.open( response.message, 'close', { duration: 2500});
+      if (this.files) {
+        this._userService.saveImg( [], this.files, 'image' )
+            .then(( result: any ) => {
+              this.event.image = result.image;
+              this._userService.saveEvent( this.event ).subscribe(
+               response => {
+                 if (response.events) {
+                   this.status = 'El registro se a realizado correctamente';
+                   console.log( response.message );
+                   this.snackBar.open( response.message, 'close', { duration: 5000});
+                 }else{
+                   this.status = 'Erros en el registro';
+                   console.log( response.message );
+                   this.snackBar.open( response.message, 'close', { duration: 2500});
+                 }
+               },error => {
+                 console.log(<any>error);
                }
-             },error => {
-               console.log(<any>error);
-             }
-            );
-          });
+              );
+            });
+      }else{
+        this.snackBar.open( 'Seleccione una imagen', 'close', { duration: 5000});
+      }
+
     }
 }
