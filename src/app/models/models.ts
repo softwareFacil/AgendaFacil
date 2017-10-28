@@ -17,7 +17,7 @@ export class Events{
     public name: string,
     public descripcion: string,
     public org: string,
-    public espacios : {
+    public ubicacion : {
         lat : number,
         long : number,
         nombre : string

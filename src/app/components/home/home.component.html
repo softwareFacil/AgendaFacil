@@ -26,7 +26,7 @@
     <div class="card" *ngFor="let item of (events)?.reverse()">
       <mat-card>
         <mat-card-header>
-          <img mat-card-avatar src="{{item.icon}}">
+          <img mat-card-avatar src="{{ this.icon + item.icon}}">
           <mat-card-title>{{ item.org }}</mat-card-title>
           <mat-card-subtitle>{{ item.tipo }}</mat-card-subtitle>
         </mat-card-header>

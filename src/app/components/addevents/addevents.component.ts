@@ -28,6 +28,8 @@ export class AddeventsComponent implements OnInit {
     public identity;
     public Fecha:Date;
     public act;
+    public status: string;
+    public files;
     stateCtrl: FormControl;
     filteredStates: Observable<any[]>;
 
@@ -144,7 +146,7 @@ export class AddeventsComponent implements OnInit {
       private ngZone: NgZone,
       private _userService: UserService
     ) {
-      this.event = new Events( '','','',{lat: 0,long: 0,nombre:''}, '','','','', '' );
+      this.event = new Events( '','test','',{lat: 0,long: 0,nombre:''}, '','','','', '' );
       this.stateCtrl = new FormControl();
       this.filteredStates = this.stateCtrl.valueChanges
         .startWith(null)
@@ -160,7 +162,6 @@ export class AddeventsComponent implements OnInit {
 
     ngOnInit() {
       this.identity = this._userService.getIdentity();
-      console.log(this.event);
       //set google maps defaults
       this.zoom = 4;
       this.latitude = 39.8282;
@@ -214,18 +215,36 @@ export class AddeventsComponent implements OnInit {
     }
 
     onChange(event) {
-      var files = event.srcElement.files;
-      this.event.image = files[0].name;
+      this.files = event.srcElement.files;
+      // this.event.image = this.files[0].name;
     }
 
     onSubmit(){
-      // this.event.fecha_inicio = this.Fecha;
-      this.event.espacios.lat = this.latitudeMark;
-      this.event.espacios.long = this.longitudeMark;
+      console.log(this.files)
+
+      this.event.ubicacion.lat = this.latitudeMark;
+      this.event.ubicacion.long = this.longitudeMark;
       this.event.org = this.identity.name;
       this.event.icon = this.identity.foto;
-      console.log(this.identity)
-      console.log(this.event)
+
+      this._userService.saveImg( [], this.files, 'image' )
+          .then(( result: any ) => {
+            this.event.image = result.image;
+            this._userService.saveEvent( this.event ).subscribe(
+             response => {
+               if (response.events) {
+                 this.status = 'El registro se a realizado correctamente';
+
+               }else{
+                 this.status = 'Erros en el registro';
+               }
+             },error => {
+               console.log(<any>error);
+             }
+            );
+          });
+
+
     }
 
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { GLOBAL } from './global';
@@ -22,9 +22,43 @@ export class UserService{
     }
     let params = JSON.stringify( user_to_login );
     let headers = new Headers({ 'Content-Type': 'application/json' });
-    console.log(params)
     return this._http.post( this.url + '/login/', params, { headers:headers } )
                      .map( res => res.json() );
+  }
+
+  saveEvent( data_to_Event ){
+    let params = JSON.stringify( data_to_Event );
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    return this._http.post( this.url + '/saveEvent/', params, { headers:headers } )
+                     .map( res => res.json() );
+  }
+
+  saveImg( params, files, name ){
+
+    return new Promise( function( resolve, reject ){
+        var formData: any = new FormData();
+        var xhr= new XMLHttpRequest();
+        formData.append(name, files[0], files[0].name);
+
+        xhr.onreadystatechange = function() {
+          if ( xhr.readyState == 4 ) {
+            if ( xhr.status == 200 ) {
+              resolve( JSON.parse( xhr.response ) );
+            }else{
+              reject( xhr.response );
+            }
+          }
+        }
+
+        xhr.open( 'POST', 'http://agenda.publibarrio.cl:3789/api' + '/upload-img-event/' , true );
+        xhr.send( formData );
+    })
+
+    // let params = JSON.stringify( img_Event );
+    // const headers = new Headers({});
+    // let options = new RequestOptions({ headers });
+    // return this._http.post( this.url + '/upload-img-event/', params, options )
+    //                  .map( res => res.json() );
   }
 
   getEvents(){

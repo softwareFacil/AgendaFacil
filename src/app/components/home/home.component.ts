@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
 
   public events = [];
   public img = 'http://agenda.publibarrio.cl:3789/api/get-img/';
+  public icon = 'http://agenda.publibarrio.cl:3789/api/get-icon/';
 
   constructor(
     private _apiService: UserService

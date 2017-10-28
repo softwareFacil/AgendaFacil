@@ -66,10 +66,7 @@ export class AddspaceComponent{
 
   placeMarker( $event, data){
     this.latitudeMark = $event.coords.lat;
-    console.log(this.latitudeMark)
     this.longitudeMark = $event.coords.lng;
-    console.log(this.longitudeMark)
-    console.log(data)
   }
 
   private setCurrentPosition() {
