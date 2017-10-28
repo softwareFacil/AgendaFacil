@@ -9,9 +9,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { GooglePlaceModule } from 'ng2-google-place-autocomplete';
 import { MatTableModule } from '@angular/material';
 
-
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import { LOCALE_ID } from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatInputModule } from '@angular/material';
@@ -20,6 +18,8 @@ import { FormControl } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material';
 
 import { APP_ROUTING } from './app.routing';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
 import { RequestComponent } from './components/request/request.component';
 import { AddcategoryComponent } from './components/addcategory/addcategory.component';
 import { ListcategoryComponent } from './components/listcategory/listcategory.component';
@@ -70,7 +70,7 @@ import { AgmCoreModule } from '@agm/core';
   ],
   // schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    { useClass: HashLocationStrategy, provide: LOCALE_ID, useValue: "es" }
   ],
   bootstrap: [ AppComponent ]
 })
