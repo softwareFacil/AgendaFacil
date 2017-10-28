@@ -148,7 +148,7 @@ export class AddeventsComponent implements OnInit {
       private _userService: UserService,
       public snackBar: MatSnackBar
     ) {
-      this.event = new Events( '','test','',{lat: 0,long: 0,nombre:''}, '','','','', '' );
+      this.event = new Events( '','test','',{lat: 0,long: 0,nombre:''}, '','','','', '', '' );
       this.stateCtrl = new FormControl();
       this.filteredStates = this.stateCtrl.valueChanges
         .startWith(null)

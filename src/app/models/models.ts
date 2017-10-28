@@ -26,6 +26,7 @@ export class Events{
     public fecha_termino: string,
     public icon: string,
     public tipo: string,
-    public image: string
+    public image: string,
+    public fono: string
   ){}
 }

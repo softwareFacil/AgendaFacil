@@ -50,7 +50,8 @@
     </agm-map>
 
     <mat-form-field class="event-full-width">
-      <label>Telefono</label> <input type="text" matInput>
+      <label>Telefono</label> <input type="text" matInput
+      name="fono" #fono="ngModel" [(ngModel)]="event.fono">
     </mat-form-field>
 
     <mat-form-field class="event-full-width">
