@@ -1,0 +1,65 @@
+
+
+
+<div id="enter">
+
+
+  <h1>Categorias registradas</h1>
+
+  <div class="example-container mat-elevation-z8" >
+    <mat-table #table [dataSource]="dataSource">
+
+
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{ item.name }} </mat-cell>
+      </ng-container>
+
+
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{ item.name }} </mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="weight">
+        <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{ item.name }} </mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{ item.name }} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+
+</div>
+
+
+
+<div class="container">
+  <div class="card-columns">
+
+    <div class="card" *ngFor="let item of (events)?.reverse()">
+      <mat-card>
+        <mat-card-header>
+          <img mat-card-avatar src="{{ this.icon + item.icon}}">
+          <mat-card-title>{{ item.org }}</mat-card-title>
+          <mat-card-subtitle>{{ item.tipo }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{ this.img + item.image }}">
+        <mat-card-content>
+          <h2>{{ item.name }}</h2>
+          <p>{{ item.descripcion }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+</div>
