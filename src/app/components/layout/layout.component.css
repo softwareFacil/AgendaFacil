@@ -39,7 +39,7 @@ mat-sidenav{
 
 .top_user{
   display: flex;
-  background-color: white;
+  background-color: #9EE6CF;
   color: black;
   padding: 1.7em 0.5em 0.5em 0.5em;
   height: 7em;
@@ -77,14 +77,6 @@ mat-sidenav{
   font-size: 14px;
 }
 
-.divier-menu{
-  fill: #737373;
-  display: block;
-  border-top: 1px solid;
-  margin: 0;
-  border-top-color: rgba( 0, 0, 0, 0.12 );
-}
-
 .vertical-menu{
   margin-top: 0.7em;
 }
@@ -101,7 +93,7 @@ mat-sidenav{
 }
 
 .vertical-menu-item{
-  color: #737373;
+  color: black;
   cursor: pointer;
   display: block;
   padding-top: 0.6em;
@@ -123,7 +115,7 @@ mat-sidenav{
 }
 
 .vertical-menu-item:hover{
-  background-color: #d6d6d6;
+  background-color: #49c8ce;
 }
 .menu{
   position: relative;
@@ -131,4 +123,25 @@ mat-sidenav{
 .out .vertical-menu-item{
   position: fixed;
   bottom: 0px;
+}
+
+.navbar{
+  background-color: #9EE6CF;
+}
+
+.logo-toogle{
+  background: #50C9BA;
+  /*background-color: white;*/
+}
+
+.menu-toogle{
+  background: #50C9BA;
+  /*background: -webkit-linear-gradient(#69d0b3, white);
+  background: -o-linear-gradient(#69d0b3, white);
+  background: -moz-linear-gradient(#69d0b3, white);
+  background: linear-gradient(#69d0b3, white);*/
+}
+
+button:hover{
+  background-color: #6ac57a;
 }

@@ -45,6 +45,13 @@ mat-card{
   display: inline-block;
   margin: auto;
 }*/
+.mat-card{
+  background: #9EE6CF;
+  background: -webkit-linear-gradient(#9EE6CF, #9EE6CF, #9EE6CF, white, white, white, white);
+  background: -o-linear-gradient(#9EE6CF, #9EE6CF, #9EE6CF, white, white, white, white);
+  background: -moz-linear-gradient(#9EE6CF, #9EE6CF, #9EE6CF, white, white, white, white);
+  background: linear-gradient(#9EE6CF, #9EE6CF, #9EE6CF, white, white, white, white);
+}
 
 .card{
   font-size: 4px;

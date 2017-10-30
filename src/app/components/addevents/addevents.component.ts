@@ -237,6 +237,7 @@ export class AddeventsComponent implements OnInit {
                    this.status = 'El registro se a realizado correctamente';
                    console.log( response.message );
                    this.snackBar.open( response.message, 'close', { duration: 5000});
+                   this.event = new Events( '','','',{lat: 0,long: 0,nombre:''}, '','','','', '', '' );
                  }else{
                    this.status = 'Erros en el registro';
                    console.log( response.message );

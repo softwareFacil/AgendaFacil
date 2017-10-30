@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 
 @Component({
@@ -244,6 +244,7 @@ export class AddcategoryComponent implements OnInit {
                    this.status = 'Erros en el registro';
                    console.log( response.message );
                    this.snackBar.open( response.message, 'close', { duration: 2500});
+                   console.log(this.event)
                  }
                },error => {
                  console.log(<any>error);

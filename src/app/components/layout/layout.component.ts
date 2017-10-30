@@ -11,6 +11,7 @@ import { UserService } from '../../services/api-rest.service';
 export class LayoutComponent implements OnInit {
 
   public identity;
+  public icon = 'http://agenda.publibarrio.cl:3789/api/get-icon/';
 
   constructor(
     private _userService: UserService

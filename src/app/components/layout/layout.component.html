@@ -1,8 +1,8 @@
 <div>
   <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side" opened="false">
+    <mat-sidenav #sidenav mode="side" opened="false" class="menu-toogle">
 
-      <mat-toolbar class="top_logo">
+      <mat-toolbar class="top_logo logo-toogle">
         <span>
           <img alt="Logo">
         </span>
@@ -11,7 +11,7 @@
       <mat-toolbar class="top_user" *ngIf="identity">
 
           <span>
-            <img src="http://coding.infoconex.com/Custom/Themes/Standard/src/img/logo.png" alt="User">
+            <img src="{{ this.icon + identity.foto }}" alt="User">
           </span>
           <mat-toolbar-row>
             <span>{{ identity.name }}</span>
@@ -118,7 +118,7 @@
 
     </mat-sidenav>
 
-    <mat-toolbar color="primary">
+    <!-- <mat-toolbar color="primary">
       <button class="hamburger" mat-button (click)="sidenav.toggle()">
         <mat-icon class="mat-icon">menu</mat-icon>
       </button>
@@ -136,7 +136,17 @@
       <button class="sort" mat-button>
         <mat-icon class="mat-icon">sort</mat-icon>
       </button>
-    </mat-toolbar>
+    </mat-toolbar> -->
+
+    <nav class="navbar justify-content-between">
+      <button class="btn btn-outline-success my-2 my-sm-0" mat-button (click)="sidenav.toggle()">
+        <mat-icon class="mat-icon">menu</mat-icon>
+      </button>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" mat-button>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" mat-button><mat-icon class="mat-icon">search</mat-icon></button>
+      </form>
+    </nav>
 
     <div class="" style="overflow-y: scroll;">
       <router-outlet></router-outlet>
