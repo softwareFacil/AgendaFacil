@@ -31,6 +31,7 @@ import { RequestspaceComponent } from './components/requestspace/requestspace.co
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AgmCoreModule } from '@agm/core';
+import { RequestaccountComponent } from './components/requestaccount/requestaccount.component';
 
 
 
@@ -46,7 +47,8 @@ import { AgmCoreModule } from '@agm/core';
     ListeventsComponent,
     RequestspaceComponent,
     LoginComponent,
-    LayoutComponent
+    LayoutComponent,
+    RequestaccountComponent
   ],
   imports: [
     AgmCoreModule.forRoot({

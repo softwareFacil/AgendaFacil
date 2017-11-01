@@ -13,7 +13,7 @@
           <span>
             <img src="{{ this.icon + identity.foto }}" alt="User">
           </span>
-          <mat-toolbar-row>
+          <mat-toolbar-row class="user">
             <span>{{ identity.name }}</span>
             <span class="user-mail">
               {{ identity.email }}
@@ -23,7 +23,7 @@
             </span>
           </mat-toolbar-row>
 
-          <button mat-icon-button [matMenuTriggerFor]="menu">
+          <button mat-icon-button [matMenuTriggerFor]="menu" class="menuT">
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
@@ -43,7 +43,10 @@
           <span>
             <img src="http://coding.infoconex.com/Custom/Themes/Standard/src/img/logo.png" alt="User">
           </span>
-          <button mat-button [routerLink]="['../login']">Entrar</button>
+          <button mat-button [routerLink]="['../login']" class="requestIn">Entrar</button>
+          <a href="#" class="request" [routerLink]="['../account']">Pedir cuenta</a>
+          <a class="request">/</a>
+          <a href="#" class="request">Recuperar</a>
         </div>
       </mat-toolbar>
 
@@ -99,52 +102,20 @@
             </a>
           </div>
 
-          <div class="vertical-menu" routerLinkActive="active" *ngIf="identity.role == 'ROLE_USER'">
-            <a class="vertical-menu-item" [routerLink]="['../requestspace']">
-              <mat-icon>location_on</mat-icon>
-              Solicitar Espacio
-            </a>
-          </div>
         </div>
 
-        <!-- <div class="vertical-menu out">
-          <a class="vertical-menu-item" [routerLink]="['../login']">
-            <i class="fa fa-sign-out"></i>
-            Salir
-          </a>
-        </div> -->
       </div>
 
 
     </mat-sidenav>
 
-    <!-- <mat-toolbar color="primary">
-      <button class="hamburger" mat-button (click)="sidenav.toggle()">
-        <mat-icon class="mat-icon">menu</mat-icon>
-      </button>
-
-      <form class="search-form">
-        <mat-form-field class="search-full-width">
-          <input matInput placeholder="Buscar">
-        </mat-form-field>
-      </form>
-
-      <button class="search" mat-button>
-        <mat-icon class="mat-icon">search</mat-icon>
-      </button>
-
-      <button class="sort" mat-button>
-        <mat-icon class="mat-icon">sort</mat-icon>
-      </button>
-    </mat-toolbar> -->
-
     <nav class="navbar justify-content-between">
-      <button class="btn btn-outline-success my-2 my-sm-0" mat-button (click)="sidenav.toggle()">
+      <button class="btn btn-outline-success my-2 my-sm-0 toogle" mat-button (click)="sidenav.toggle()">
         <mat-icon class="mat-icon">menu</mat-icon>
       </button>
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" mat-button>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" mat-button><mat-icon class="mat-icon">search</mat-icon></button>
+        <button class="btn btn-outline-success my-2 my-sm-0 toogle" type="submit" mat-button><mat-icon class="mat-icon">search</mat-icon></button>
       </form>
     </nav>
 
@@ -154,7 +125,3 @@
 
   </mat-sidenav-container>
 </div>
-
-<!-- <div *ngIf="!identity">
-    <router-outlet></router-outlet>
-</div> -->

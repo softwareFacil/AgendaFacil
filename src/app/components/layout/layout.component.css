@@ -39,10 +39,10 @@ mat-sidenav{
 
 .top_user{
   display: flex;
-  background-color: #9EE6CF;
+  background-color: #1EE494;
   color: black;
   padding: 1.7em 0.5em 0.5em 0.5em;
-  height: 7em;
+  height: 6em;
   box-shadow: 0px 3px 13px -3px rgba( 0, 0, 0, 0.75 );
 }
 
@@ -50,6 +50,7 @@ mat-sidenav{
   border: 2px solid white;
   border-radius: 40px;
   height: 70px;
+  width: 70px;
   margin-bottom: 0.7em;
 }
 
@@ -93,7 +94,7 @@ mat-sidenav{
 }
 
 .vertical-menu-item{
-  color: black;
+  color: white;
   cursor: pointer;
   display: block;
   padding-top: 0.6em;
@@ -115,10 +116,25 @@ mat-sidenav{
 }
 
 .vertical-menu-item:hover{
-  background-color: #49c8ce;
+  background-color: #1EE494;
+  color: black;
 }
 .menu{
   position: relative;
+}
+.menuT{
+  position: relative;
+  top: -40px;
+  left: 95px;
+}
+.menuT:hover{
+  background-color: #464545;
+  color: white;
+}
+.user{
+  position: relative;
+  top: -55px;
+  left: 80px;
 }
 .out .vertical-menu-item{
   position: fixed;
@@ -126,22 +142,56 @@ mat-sidenav{
 }
 
 .navbar{
-  background-color: #9EE6CF;
+  background-color: #464545;
+  border-radius: 0px;
+  color: white;
+}
+
+.toogle:hover{
+  background-color: #1EE494;
+  color: black;
 }
 
 .logo-toogle{
-  background: #50C9BA;
+  background-color: #464545;
+  color: white;
   /*background-color: white;*/
 }
 
 .menu-toogle{
-  background: #50C9BA;
+  background-color: #464545;
   /*background: -webkit-linear-gradient(#69d0b3, white);
   background: -o-linear-gradient(#69d0b3, white);
   background: -moz-linear-gradient(#69d0b3, white);
   background: linear-gradient(#69d0b3, white);*/
 }
+.requestIn{
+  top: -5px;
+  left: 20px;
+  font-size: 17px;
+}
+
+.requestIn:hover{
+  background: #464545;
+  color: white;
+}
+
+.request{
+  font-size: 10px;
+  background: none;
+  position: relative;
+  top: 20px;
+  left: -93px;
+  color: black;
+}
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
 
 button:hover{
-  background-color: #6ac57a;
+  background: #6ac57a;
 }

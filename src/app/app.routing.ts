@@ -1,11 +1,7 @@
 import { ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-
-
-
-
-
+//Modulos
 import { HomeComponent } from './components/home/home.component';
 import { RequestComponent } from './components/request/request.component';
 import { AddcategoryComponent } from './components/addcategory/addcategory.component';
@@ -15,6 +11,7 @@ import { ListcategoryComponent } from './components/listcategory/listcategory.co
 import { ListeventsComponent } from './components/listevents/listevents.component';
 import { LoginComponent } from './components/login/login.component';
 import { RequestspaceComponent } from './components/requestspace/requestspace.component';
+import { RequestaccountComponent } from './components/requestaccount/requestaccount.component';
 import { LayoutComponent } from './components/layout/layout.component';
 
 
@@ -27,6 +24,7 @@ const APP_ROUTES: Routes = [
   { path: 'listcategory', component: ListcategoryComponent },
   { path: 'listevents', component: ListeventsComponent },
   { path: 'requestspace', component: RequestspaceComponent },
+  { path: 'account', component: RequestaccountComponent },
   { path: 'login', component: LoginComponent },
   { path: '**', pathMatch: 'full', component: HomeComponent },
 ];

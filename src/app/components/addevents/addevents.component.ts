@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-addevents',
@@ -146,7 +146,7 @@ export class AddeventsComponent implements OnInit {
       private mapsAPILoader: MapsAPILoader,
       private ngZone: NgZone,
       private _userService: UserService,
-      public snackBar: MatSnackBar
+      private snackBar: MatSnackBar
     ) {
       this.event = new Events( '','test','',{lat: 0,long: 0,nombre:''}, '','','','', '', '' );
       this.stateCtrl = new FormControl();

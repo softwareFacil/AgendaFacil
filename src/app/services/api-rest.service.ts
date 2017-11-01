@@ -26,6 +26,13 @@ export class UserService{
                      .map( res => res.json() );
   }
 
+  saveUser( user_save ){
+    let params = JSON.stringify( user_save );
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    return this._http.post( this.url + '/register/', params, { headers:headers } )
+                     .map( res => res.json() );
+  }
+
   saveEvent( data_to_Event ){
     let params = JSON.stringify( data_to_Event );
     let headers = new Headers({ 'Content-Type': 'application/json' });
@@ -34,7 +41,6 @@ export class UserService{
   }
 
   saveImg( params, files, name ){
-
     return new Promise( function( resolve, reject ){
         var formData: any = new FormData();
         var xhr= new XMLHttpRequest();
@@ -49,16 +55,29 @@ export class UserService{
             }
           }
         }
-
         xhr.open( 'POST', 'http://agenda.publibarrio.cl:3789/api' + '/upload-img-event/' , true );
         xhr.send( formData );
     })
+  }
 
-    // let params = JSON.stringify( img_Event );
-    // const headers = new Headers({});
-    // let options = new RequestOptions({ headers });
-    // return this._http.post( this.url + '/upload-img-event/', params, options )
-    //                  .map( res => res.json() );
+  saveIcon( params, files, name ){
+    return new Promise( function( resolve, reject ){
+        var formData: any = new FormData();
+        var xhr= new XMLHttpRequest();
+        formData.append(name, files[0], files[0].name);
+
+        xhr.onreadystatechange = function() {
+          if ( xhr.readyState == 4 ) {
+            if ( xhr.status == 200 ) {
+              resolve( JSON.parse( xhr.response ) );
+            }else{
+              reject( xhr.response );
+            }
+          }
+        }
+        xhr.open( 'POST', 'http://agenda.publibarrio.cl:3789/api' + '/upload-img-user/' , true );
+        xhr.send( formData );
+    })
   }
 
   getEvents(){
