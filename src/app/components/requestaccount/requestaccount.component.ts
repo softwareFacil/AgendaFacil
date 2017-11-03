@@ -22,7 +22,7 @@ export class RequestaccountComponent implements OnInit {
     private _userService: UserService,
     private snackBar: MatSnackBar
   ) {
-    this.user = new User( '', '', '', '', '', 'ROLE_USER', '', '', '' );
+    this.user = new User( '', '', '', '', '', 'ROLE_USER', '', '', '', false );
   }
 
   ngOnInit() {

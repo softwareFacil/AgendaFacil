@@ -47,10 +47,10 @@ mat-card{
 }*/
 .mat-card{
   background: #9EE6CF;
-  background: -webkit-linear-gradient(#1EE494, #1EE494, #1EE494, white, white, white, white);
-  background: -o-linear-gradient(#1EE494, #1EE494, #1EE494, white, white, white, white);
-  background: -moz-linear-gradient(#1EE494, #1EE494, #1EE494, white, white, white, white);
-  background: linear-gradient(#1EE494, #1EE494, #1EE494, white, white, white, white);
+  background: -webkit-linear-gradient(#1EE494 30%, white 30%,white 40%);
+  background: -o-linear-gradient(#1EE494 30%, white 30%,white 40%);
+  background: -moz-linear-gradient(#1EE494 30%, white 30%,white 40%);
+  background: linear-gradient(#1EE494 30%, white 30%,white 40%);
 }
 
 .card{
@@ -74,8 +74,4 @@ mat-card{
   @include media-breakpoint-only(sm) {
     column-count: 2;
   }
-}
-
-.mat-card{
-  min-width: 400px;
 }

@@ -8,7 +8,8 @@ export class User{
     public role: string,
     public fono: string,
     public ubicacion: string,
-    public foto: string
+    public foto: string,
+    public state: boolean
   ){}
 }
 

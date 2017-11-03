@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RequestspaceComponent } from './components/requestspace/requestspace.component';
 import { RequestaccountComponent } from './components/requestaccount/requestaccount.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { ViewComponent } from './components/view/view.component';
 
 
 const APP_ROUTES: Routes = [
@@ -26,6 +27,7 @@ const APP_ROUTES: Routes = [
   { path: 'requestspace', component: RequestspaceComponent },
   { path: 'account', component: RequestaccountComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'view/:event', component: ViewComponent },
   { path: '**', pathMatch: 'full', component: HomeComponent },
 ];
 

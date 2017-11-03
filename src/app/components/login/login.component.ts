@@ -3,6 +3,8 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { UserService } from '../../services/api-rest.service';
 import { User } from '../../models/models';
+import { MatSnackBar } from '@angular/material';
+
 
 @Component({
   selector: 'app-login',
@@ -20,10 +22,11 @@ export class LoginComponent implements OnInit {
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
-    private _userService: UserService
+    private _userService: UserService,
+    private snackBar: MatSnackBar
   ) {
     this.title = 'Identificate';
-    this.user = new User( '', '', '', '', '', 'ROLE_ADMIN', '', '', '' );
+    this.user = new User( '', '', '', '', '', 'ROLE_ADMIN', '', '', '', true );
   }
 
   ngOnInit() {
@@ -37,26 +40,30 @@ export class LoginComponent implements OnInit {
         if ( !this.identity || !this.identity._id ) {
           alert( 'El usuario no se ha logueado correctamente' );
         }else{
-          this.identity.password = '';
-          localStorage.setItem( 'identity', JSON.stringify( this.identity ) );
+          if (this.identity.state) {
+            this.identity.password = '';
+            localStorage.setItem( 'identity', JSON.stringify( this.identity ) );
 
-          //Obtener Token
-          this._userService.signup( this.user, 'true' ).subscribe(
-            response => {
-              this.token = response.token;
-              if ( this.token.length <= 0 ) {
-                  alert( 'El token no se ha generado' );
-              }else{
-                localStorage.setItem( 'token', this.token );
-                this.status = 'success';
-
-                this._router.navigate([ '/type' ]);
+            //Obtener Token
+            this._userService.signup( this.user, 'true' ).subscribe(
+              response => {
+                this.token = response.token;
+                if ( this.token.length <= 0 ) {
+                    alert( 'El token no se ha generado' );
+                }else{
+                  localStorage.setItem( 'token', this.token );
+                  this.status = 'success';
+                  this._router.navigate([ '/' ]);
+                }
+              },
+              error => {
+                console.log( <any>error );
               }
-            },
-            error => {
-              console.log( <any>error );
-            }
-          );
+            );
+          }else{
+            this.identity = "";
+            this.snackBar.open( 'Este usuario aun no se encuentra validado', 'close', { duration: 5000});
+          }
         }
       },
       error => {
