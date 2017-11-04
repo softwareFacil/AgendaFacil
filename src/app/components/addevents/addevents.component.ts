@@ -139,6 +139,8 @@ export class AddeventsComponent implements OnInit {
       },
     ];
 
+    public map;
+
     @ViewChild("search")
     public searchElementRef: ElementRef;
 
@@ -175,31 +177,86 @@ export class AddeventsComponent implements OnInit {
       this.searchControl = new FormControl();
 
       //set current position
-      this.setCurrentPosition();
 
       //load Places Autocomplete
-      this.mapsAPILoader.load().then(() => {
-        let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-          types: ["address"]
-        });
-        autocomplete.addListener("place_changed", () => {
-          this.ngZone.run(() => {
-            //get the place result
-            let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+      // this.mapsAPILoader.load().then(() => {
+      //   let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+      //     types: ["address"]
+      //   });
+      //   autocomplete.addListener("place_changed", () => {
+      //     this.ngZone.run(() => {
+      //       //get the place result
+      //       let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+      //
+      //       //verify result
+      //       if (place.geometry === undefined || place.geometry === null) {
+      //         return;
+      //       }
+      //
+      //       //set latitude, longitude and zoom
+      //       this.latitude = place.geometry.location.lat();
+      //       this.longitude = place.geometry.location.lng();
+      //       this.zoom = 12;
+      //     });
+      //   });
+      // });
 
-            //verify result
-            if (place.geometry === undefined || place.geometry === null) {
-              return;
-            }
+      // var mapD = "http://maps.googleapis.com/maps/api/geocode/json?address=casino+dreams&key=AIzaSyBeIMKT6zX8MSFE1cFEwKnh0V2Xs63jQ1I";
+      // console.log(mapD)
+      // var mapProp = {
+      //       center: new google.maps.LatLng(this.latitude, this.longitude),
+      //       zoom: 5,
+      //       mapTypeId: google.maps.MapTypeId.ROADMAP
+      //   };
+      //   var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+      // this.setCurrentPosition();
+      //
+      //
+      //
+      // this.map = new google.maps.Map(document.getElementById('map'), {
+      //
+      //   center: {lat: this.latitude, lng: this.longitude},
+      //   zoom: 8
+      // });
 
-            //set latitude, longitude and zoom
-            this.latitude = place.geometry.location.lat();
-            this.longitude = place.geometry.location.lng();
-            this.zoom = 12;
+      this.initMap();
+    }
+
+    @ViewChild("search") search;
+
+    initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: {lat: -34.397, lng: 150.644}
+      });
+      var geocoder = new google.maps.Geocoder();
+
+      var searchAddress = this.search.nativeElement.value;
+      console.log(searchAddress)
+
+      document.getElementById('submit').addEventListener('click', function() {
+        var address = searchAddress;
+        geocoder.geocode({'address': address}, function(results, status) {
+          map.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
           });
+          console.log(marker)
         });
+
       });
     }
+
+    // GoogleMap(position) {
+    //   var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    //
+    //   var map = new google.maps.Map(document.getElementById('map'), {
+    //     zoom: 20,
+    //     disableDefaultUI: true,
+    //     mapTypeId: google.maps.MapTypeId.ROADMAP
+    //   });
+    // }
 
     placeMarker( $event, data){
       this.latitudeMark = $event.coords.lat;

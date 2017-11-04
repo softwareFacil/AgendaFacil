@@ -16,7 +16,7 @@
         <td>{{ item.name }}</td>
         <td>{{ item.email }}</td>
         <td>{{ item.fono }}</td>
-        <td><i class="material-icons" (click)="approve( item._id )">done</i><i class="material-icons" (click)="delete()">delete</i></td>
+        <td><i class="material-icons" (click)="approve( item )">done</i><i class="material-icons" (click)="delete( item )">delete</i></td>
       </tr>
     </tbody>
   </table>

@@ -80,19 +80,20 @@ export class UserService{
     })
   }
 
-  validateUser( userId ){
+  validateUser( user ){
+    let params = JSON.stringify( user )
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this._http
-               .put( this.url + '/validateUser/' + userId, {headers: headers})
-               .map(res => res.json());
+               .put( this.url + '/validateUser/' + user._id, params, {headers: headers})
+               .map( res => res.json() );
   }
 
-  deleteUser( userId ){
+  deleteUser( user ){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this._http
-               .delete( this.url + '/validateUser/' + userId, {headers: headers})
+               .delete( this.url + '/removeUser/' + user._id, {headers: headers})
                .map(res => res.json());
   }
 

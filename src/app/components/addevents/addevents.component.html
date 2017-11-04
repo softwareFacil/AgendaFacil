@@ -42,12 +42,17 @@
 
     <mat-form-field class="event-full-width">
       <label>Lugar</label>
-      <input matInput autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search [formControl]="searchControl">
+      <!-- <input matInput autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search [formControl]="searchControl"> -->
+        <input id="search" matInput type="textbox" value="">
+        <input id="submit" type="button" value="Geocode">
+
+      <div id="map"></div>
+
     </mat-form-field>
-    <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom" (mapClick)="placeMarker($event,infoWindow)">
+    <!-- <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom" (mapClick)="placeMarker($event,infoWindow)">
       <agm-marker [latitude]="latitudeMark" [longitude]="longitudeMark"></agm-marker>
       <agm-data-layer #infoWindow></agm-data-layer>
-    </agm-map>
+    </agm-map> -->
 
     <mat-form-field class="event-full-width">
       <label>Telefono</label> <input type="text" matInput
