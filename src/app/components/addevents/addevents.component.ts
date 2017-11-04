@@ -173,51 +173,7 @@ export class AddeventsComponent implements OnInit {
       this.latitudeMark = 0;
       this.longitudeMark = 0;
 
-      //create search FormControl
       this.searchControl = new FormControl();
-
-      //set current position
-
-      //load Places Autocomplete
-      // this.mapsAPILoader.load().then(() => {
-      //   let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-      //     types: ["address"]
-      //   });
-      //   autocomplete.addListener("place_changed", () => {
-      //     this.ngZone.run(() => {
-      //       //get the place result
-      //       let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-      //
-      //       //verify result
-      //       if (place.geometry === undefined || place.geometry === null) {
-      //         return;
-      //       }
-      //
-      //       //set latitude, longitude and zoom
-      //       this.latitude = place.geometry.location.lat();
-      //       this.longitude = place.geometry.location.lng();
-      //       this.zoom = 12;
-      //     });
-      //   });
-      // });
-
-      // var mapD = "http://maps.googleapis.com/maps/api/geocode/json?address=casino+dreams&key=AIzaSyBeIMKT6zX8MSFE1cFEwKnh0V2Xs63jQ1I";
-      // console.log(mapD)
-      // var mapProp = {
-      //       center: new google.maps.LatLng(this.latitude, this.longitude),
-      //       zoom: 5,
-      //       mapTypeId: google.maps.MapTypeId.ROADMAP
-      //   };
-      //   var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-      // this.setCurrentPosition();
-      //
-      //
-      //
-      // this.map = new google.maps.Map(document.getElementById('map'), {
-      //
-      //   center: {lat: this.latitude, lng: this.longitude},
-      //   zoom: 8
-      // });
 
       this.initMap();
     }
@@ -247,16 +203,6 @@ export class AddeventsComponent implements OnInit {
 
       });
     }
-
-    // GoogleMap(position) {
-    //   var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-    //
-    //   var map = new google.maps.Map(document.getElementById('map'), {
-    //     zoom: 20,
-    //     disableDefaultUI: true,
-    //     mapTypeId: google.maps.MapTypeId.ROADMAP
-    //   });
-    // }
 
     placeMarker( $event, data){
       this.latitudeMark = $event.coords.lat;
