@@ -176,14 +176,13 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 8,
+      zoom: 14,
       center: {lat: -34.397, lng: 150.644}
     });
   }
 
   geocodeAddres(address){
     //address = address.toString();
-    console.log(address);
     this.geocoder.geocode({'address':address},(results, status)=>{
       if (status.toString() === 'OK') {
         this.map.setCenter(results[0].geometry.location);
@@ -191,6 +190,8 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
           map: this.map,
           position: results[0].geometry.location
         });
+        console.log(results[0])
+        console.log(results[0].geometry)
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
