@@ -186,6 +186,8 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
     this.geocoder.geocode({'address':address},(results, status)=>{
       if (status.toString() === 'OK') {
         this.map.setCenter(results[0].geometry.location);
+        console.log(results[0].geometry.location.lat());
+        console.log(results[0].geometry.location.lng());
         var marker = new google.maps.Marker({
           map: this.map,
           position: results[0].geometry.location
