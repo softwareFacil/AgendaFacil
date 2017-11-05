@@ -43,8 +43,8 @@
     <mat-form-field class="event-full-width">
       <label>Lugar</label>
       <!-- <input matInput autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search [formControl]="searchControl"> -->
-        <input id="search" matInput type="textbox" value="">
-        <input id="submit" type="button" value="Geocode">
+        <input id="search" matInput type="textbox" value="" #direcc>
+        <input id="submit" type="button" value="Geocode" (click)="geocodeAddres(direcc.value)">
 
       <div id="map"></div>
 

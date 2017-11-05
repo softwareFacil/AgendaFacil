@@ -13,7 +13,7 @@
           <span>
             <img src="{{ this.icon + identity.foto }}" alt="User">
           </span>
-          <mat-toolbar-row class="user">
+          <div class="user">
             <span>{{ identity.name }}</span>
             <span class="user-mail">
               {{ identity.email }}
@@ -21,7 +21,7 @@
                 verified_user
               </mat-icon>
             </span>
-          </mat-toolbar-row>
+          </div>
 
           <button mat-icon-button [matMenuTriggerFor]="menu" class="menuT">
             <mat-icon>more_vert</mat-icon>
