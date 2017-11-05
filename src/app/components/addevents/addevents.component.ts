@@ -192,8 +192,9 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
           map: this.map,
           position: results[0].geometry.location
         });
-        console.log(results[0])
-        console.log(results[0].geometry)
+        this.event.ubicacion.lat = results[0].geometry.location.lat();
+        this.event.ubicacion.long = results[0].geometry.location.lng();
+        this.event.ubicacion.nombre = results[0].formatted_address;
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
@@ -224,8 +225,6 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit(desc: string) {
-    this.event.ubicacion.lat = this.latitudeMark;
-    this.event.ubicacion.long = this.longitudeMark;
     this.event.org = this.identity.name;
     this.event.icon = this.identity.foto;
     this.event.descripcion = desc;

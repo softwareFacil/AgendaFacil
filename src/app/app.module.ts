@@ -24,7 +24,6 @@ import { HomeComponent } from './components/home/home.component';
 import { RequestComponent } from './components/request/request.component';
 import { AddcategoryComponent } from './components/addcategory/addcategory.component';
 import { ListcategoryComponent } from './components/listcategory/listcategory.component';
-import { AddspaceComponent } from './components/addspace/addspace.component';
 import { AddeventsComponent } from './components/addevents/addevents.component';
 import { ListeventsComponent } from './components/listevents/listevents.component';
 import { RequestspaceComponent } from './components/requestspace/requestspace.component';
@@ -43,7 +42,6 @@ import { ViewComponent } from './components/view/view.component';
     RequestComponent,
     AddcategoryComponent,
     ListcategoryComponent,
-    AddspaceComponent,
     AddeventsComponent,
     ListeventsComponent,
     RequestspaceComponent,

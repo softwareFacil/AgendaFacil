@@ -6,11 +6,9 @@ import { HomeComponent } from './components/home/home.component';
 import { RequestComponent } from './components/request/request.component';
 import { AddcategoryComponent } from './components/addcategory/addcategory.component';
 import { AddeventsComponent } from './components/addevents/addevents.component';
-import { AddspaceComponent } from './components/addspace/addspace.component';
 import { ListcategoryComponent } from './components/listcategory/listcategory.component';
 import { ListeventsComponent } from './components/listevents/listevents.component';
 import { LoginComponent } from './components/login/login.component';
-import { RequestspaceComponent } from './components/requestspace/requestspace.component';
 import { RequestaccountComponent } from './components/requestaccount/requestaccount.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { ViewComponent } from './components/view/view.component';
@@ -21,10 +19,8 @@ const APP_ROUTES: Routes = [
   { path: 'request', component: RequestComponent },
   { path: 'addcategory', component: AddcategoryComponent },
   { path: 'addevents', component: AddeventsComponent },
-  { path: 'addspace', component: AddspaceComponent },
   { path: 'listcategory', component: ListcategoryComponent },
   { path: 'listevents', component: ListeventsComponent },
-  { path: 'requestspace', component: RequestspaceComponent },
   { path: 'account', component: RequestaccountComponent },
   { path: 'login', component: LoginComponent },
   { path: 'view/:event', component: ViewComponent },
