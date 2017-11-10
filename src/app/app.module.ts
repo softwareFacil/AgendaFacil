@@ -26,7 +26,7 @@ import { AddcategoryComponent } from './components/addcategory/addcategory.compo
 import { ListcategoryComponent } from './components/listcategory/listcategory.component';
 import { AddeventsComponent } from './components/addevents/addevents.component';
 import { ListeventsComponent } from './components/listevents/listevents.component';
-import { RequestspaceComponent } from './components/requestspace/requestspace.component';
+
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AgmCoreModule } from '@agm/core';
@@ -44,7 +44,6 @@ import { ViewComponent } from './components/view/view.component';
     ListcategoryComponent,
     AddeventsComponent,
     ListeventsComponent,
-    RequestspaceComponent,
     LoginComponent,
     LayoutComponent,
     RequestaccountComponent,
