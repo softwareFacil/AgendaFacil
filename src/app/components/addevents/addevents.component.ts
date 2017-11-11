@@ -34,113 +34,7 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
   stateCtrl: FormControl;
   filteredStates: Observable<any[]>;
 
-  categories = [];
-
-  // states: any[] = [
-  //   {
-  //     name: 'ACTO',
-  //   },
-  //   {
-  //     name: 'AUDICION',
-  //   },
-  //   {
-  //     name: 'BAILE',
-  //   },
-  //   {
-  //     name: 'BICICLETADA',
-  //   },
-  //   {
-  //     name: 'CAMPEONATO',
-  //   },
-  //   {
-  //     name: 'CAPACITACIÓN',
-  //   },
-  //   {
-  //     name: 'CARRERA ATLETICA',
-  //   },
-  //   {
-  //     name: 'CHARLA',
-  //   },
-  //   {
-  //     name: 'CIRCO',
-  //   },
-  //   {
-  //     name: 'CIRCUITO DEPORTIVO',
-  //   },
-  //   {
-  //     name: 'CONCIERTO',
-  //   },
-  //   {
-  //     name: 'CONFERENCIA',
-  //   },
-  //   {
-  //     name: 'CONGRESO',
-  //   },
-  //   {
-  //     name: 'CORO',
-  //   },
-  //   {
-  //     name: 'ORQUESTA',
-  //   },
-  //   {
-  //     name: 'CULTURA COMUNITARIA',
-  //   },
-  //   {
-  //     name: 'CURSO',
-  //   },
-  //   {
-  //     name: 'DANZA',
-  //   },
-  //   {
-  //     name: 'DEGUSTACIÓN',
-  //   },
-  //   {
-  //     name: 'DIÁLOGO',
-  //   },
-  //   {
-  //     name: 'ELECCIONES VECINALES',
-  //   },
-  //   {
-  //     name: 'ENCUENTRO',
-  //   },
-  //   {
-  //     name: 'EXHIBICIÓN',
-  //   },
-  //   {
-  //     name: 'EXPOSICIÓN',
-  //   },
-  //   {
-  //     name: 'FERIA',
-  //   },
-  //   {
-  //     name: 'FESTIVAL',
-  //   },
-  //   {
-  //     name: 'GASTRONOMÍA',
-  //   },
-  //   {
-  //     name: 'HUMOR',
-  //   },
-  //   {
-  //     name: 'INFANTIL/JUVENIL',
-  //   },
-  //   {
-  //     name: 'INTERVENCIÓN URBANA',
-  //   },
-  //   {
-  //     name: 'LITERATURA',
-  //   },
-  //   {
-  //     name: 'MUESTRA',
-  //   },
-  //   {
-  //     name: 'OBRA TEATRAL',
-  //   },
-  //   {
-  //     name: 'OFICIOS',
-  //   },
-  // ];
-
+  categories: any[] = [];
 
   @ViewChild("search")
   public searchElementRef: ElementRef;
@@ -154,28 +48,26 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
     private snackBar: MatSnackBar
   ) {
     this.event = new Events('', 'test', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
+  }
+
+  filterStates(actividades: string) {
+    this.event.tipo = actividades;
+    return this.categories.filter(state =>
+      state.actividades.toLowerCase().indexOf(actividades.toLowerCase()) === 0);
+
+  }
+
+  ngOnInit() {
+    this.identity = this._userService.getIdentity();
     this._userService.getCategories().subscribe( response => { this.categories = response.Catergories;
     });
     this.stateCtrl = new FormControl();
     this.filteredStates = this.stateCtrl.valueChanges
       .startWith(null)
       .map(state => state ? this.filterStates(state) : this.categories.slice());
-  }
-
-  filterStates(name: string) {
-    this.event.tipo = name;
-    return this.categories.filter(state =>
-      state.name.toLowerCase().indexOf(name.toLowerCase()) === 0);
-
-  }
-
-  ngOnInit() {
-    this.identity = this._userService.getIdentity();
-    //set google maps defaults
 
 
     this.searchControl = new FormControl();
-
   }
 
   ngAfterViewInit() {

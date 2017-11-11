@@ -18,7 +18,7 @@
       name="tipo" #tipo>
       <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
-          <span>{{ state.name }}</span>
+          <span>{{ state.actividades }}</span>
         </mat-option>
       </mat-autocomplete>
 
