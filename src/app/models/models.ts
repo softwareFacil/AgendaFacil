@@ -31,3 +31,11 @@ export class Events{
     public fono: string
   ){}
 }
+
+export class Location{
+    constructor(
+      public lat: number,
+      public lng: number,
+      public name: string
+  ){}
+}

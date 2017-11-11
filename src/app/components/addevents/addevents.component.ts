@@ -1,6 +1,6 @@
 import { Component, ElementRef, NgZone, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Events } from '../../models/models';
+import { Events, Location } from '../../models/models';
 import { UserService } from '../../services/api-rest.service';
 
 import { Observable } from 'rxjs/Observable';
@@ -26,6 +26,7 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
   public searchControl: FormControl;
   public zoom: number;
   public event: Events;
+  public location: Location;
   public identity;
   public Fecha: Date;
   public act;
@@ -48,6 +49,7 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
     private snackBar: MatSnackBar
   ) {
     this.event = new Events('', 'test', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
+    this.location = new Location( 0, 0, '' );
   }
 
   filterStates(actividades: string) {
@@ -124,6 +126,9 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
     this.event.org = this.identity.name;
     this.event.icon = this.identity.foto;
     this.event.descripcion = desc;
+    this.location.lat = this.event.ubicacion.lat;
+    this.location.lng = this.event.ubicacion.long;
+    this.location.name = this.event.ubicacion.nombre;
     if (this.files) {
       this._userService.saveImg([], this.files, 'image')
         .then((result: any) => {
@@ -135,6 +140,10 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
                 console.log(response.message);
                 this.snackBar.open(response.message, 'close', { duration: 5000 });
                 this.event = new Events('', '', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
+                console.log(this.location)
+                this._userService.saveLocation( this.location ).subscribe( response => {
+                  console.log(response);
+                });
               } else {
                 this.status = 'Erros en el registro';
                 console.log(response.message);

@@ -80,6 +80,13 @@ export class UserService{
     })
   }
 
+  saveLocation( data_to_location ){
+    let params = JSON.stringify( data_to_location );
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    return this._http.post( this.url + '/saveLocation/', params, { headers:headers } )
+                     .map( res => res.json() );
+  }
+
   validateUser( user ){
     let params = JSON.stringify( user )
     let headers = new Headers();
@@ -151,5 +158,6 @@ export class UserService{
     }
     return this.token;
   }
+
 
 }
