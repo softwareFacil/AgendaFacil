@@ -34,110 +34,112 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
   stateCtrl: FormControl;
   filteredStates: Observable<any[]>;
 
-  states: any[] = [
-    {
-      name: 'ACTO',
-    },
-    {
-      name: 'AUDICION',
-    },
-    {
-      name: 'BAILE',
-    },
-    {
-      name: 'BICICLETADA',
-    },
-    {
-      name: 'CAMPEONATO',
-    },
-    {
-      name: 'CAPACITACIÓN',
-    },
-    {
-      name: 'CARRERA ATLETICA',
-    },
-    {
-      name: 'CHARLA',
-    },
-    {
-      name: 'CIRCO',
-    },
-    {
-      name: 'CIRCUITO DEPORTIVO',
-    },
-    {
-      name: 'CONCIERTO',
-    },
-    {
-      name: 'CONFERENCIA',
-    },
-    {
-      name: 'CONGRESO',
-    },
-    {
-      name: 'CORO',
-    },
-    {
-      name: 'ORQUESTA',
-    },
-    {
-      name: 'CULTURA COMUNITARIA',
-    },
-    {
-      name: 'CURSO',
-    },
-    {
-      name: 'DANZA',
-    },
-    {
-      name: 'DEGUSTACIÓN',
-    },
-    {
-      name: 'DIÁLOGO',
-    },
-    {
-      name: 'ELECCIONES VECINALES',
-    },
-    {
-      name: 'ENCUENTRO',
-    },
-    {
-      name: 'EXHIBICIÓN',
-    },
-    {
-      name: 'EXPOSICIÓN',
-    },
-    {
-      name: 'FERIA',
-    },
-    {
-      name: 'FESTIVAL',
-    },
-    {
-      name: 'GASTRONOMÍA',
-    },
-    {
-      name: 'HUMOR',
-    },
-    {
-      name: 'INFANTIL/JUVENIL',
-    },
-    {
-      name: 'INTERVENCIÓN URBANA',
-    },
-    {
-      name: 'LITERATURA',
-    },
-    {
-      name: 'MUESTRA',
-    },
-    {
-      name: 'OBRA TEATRAL',
-    },
-    {
-      name: 'OFICIOS',
-    },
-  ];
+  categories = [];
+
+  // states: any[] = [
+  //   {
+  //     name: 'ACTO',
+  //   },
+  //   {
+  //     name: 'AUDICION',
+  //   },
+  //   {
+  //     name: 'BAILE',
+  //   },
+  //   {
+  //     name: 'BICICLETADA',
+  //   },
+  //   {
+  //     name: 'CAMPEONATO',
+  //   },
+  //   {
+  //     name: 'CAPACITACIÓN',
+  //   },
+  //   {
+  //     name: 'CARRERA ATLETICA',
+  //   },
+  //   {
+  //     name: 'CHARLA',
+  //   },
+  //   {
+  //     name: 'CIRCO',
+  //   },
+  //   {
+  //     name: 'CIRCUITO DEPORTIVO',
+  //   },
+  //   {
+  //     name: 'CONCIERTO',
+  //   },
+  //   {
+  //     name: 'CONFERENCIA',
+  //   },
+  //   {
+  //     name: 'CONGRESO',
+  //   },
+  //   {
+  //     name: 'CORO',
+  //   },
+  //   {
+  //     name: 'ORQUESTA',
+  //   },
+  //   {
+  //     name: 'CULTURA COMUNITARIA',
+  //   },
+  //   {
+  //     name: 'CURSO',
+  //   },
+  //   {
+  //     name: 'DANZA',
+  //   },
+  //   {
+  //     name: 'DEGUSTACIÓN',
+  //   },
+  //   {
+  //     name: 'DIÁLOGO',
+  //   },
+  //   {
+  //     name: 'ELECCIONES VECINALES',
+  //   },
+  //   {
+  //     name: 'ENCUENTRO',
+  //   },
+  //   {
+  //     name: 'EXHIBICIÓN',
+  //   },
+  //   {
+  //     name: 'EXPOSICIÓN',
+  //   },
+  //   {
+  //     name: 'FERIA',
+  //   },
+  //   {
+  //     name: 'FESTIVAL',
+  //   },
+  //   {
+  //     name: 'GASTRONOMÍA',
+  //   },
+  //   {
+  //     name: 'HUMOR',
+  //   },
+  //   {
+  //     name: 'INFANTIL/JUVENIL',
+  //   },
+  //   {
+  //     name: 'INTERVENCIÓN URBANA',
+  //   },
+  //   {
+  //     name: 'LITERATURA',
+  //   },
+  //   {
+  //     name: 'MUESTRA',
+  //   },
+  //   {
+  //     name: 'OBRA TEATRAL',
+  //   },
+  //   {
+  //     name: 'OFICIOS',
+  //   },
+  // ];
 
 
   @ViewChild("search")
@@ -152,15 +154,17 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
     private snackBar: MatSnackBar
   ) {
     this.event = new Events('', 'test', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
+    this._userService.getCategories().subscribe( response => { this.categories = response.Catergories;
+    });
     this.stateCtrl = new FormControl();
     this.filteredStates = this.stateCtrl.valueChanges
       .startWith(null)
-      .map(state => state ? this.filterStates(state) : this.states.slice());
+      .map(state => state ? this.filterStates(state) : this.categories.slice());
   }
 
   filterStates(name: string) {
     this.event.tipo = name;
-    return this.states.filter(state =>
+    return this.categories.filter(state =>
       state.name.toLowerCase().indexOf(name.toLowerCase()) === 0);
 
   }

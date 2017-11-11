@@ -45,6 +45,11 @@ mat-card{
   display: inline-block;
   margin: auto;
 }*/
+
+.imgEvent{
+  height: 220px;
+}
+
 .mat-card{
   background: #9EE6CF;
   background: -webkit-linear-gradient(#1EE494 30%, white 30%,white 40%);
@@ -55,6 +60,10 @@ mat-card{
 
 .card{
   font-size: 4px;
+}
+
+.cardH{
+  height: 80px
 }
 
 .container{
@@ -74,4 +83,9 @@ mat-card{
   @include media-breakpoint-only(sm) {
     column-count: 2;
   }
+}
+.menuT{
+  position: absolute;
+  left: 85%;
+  top: 7.5%;
 }

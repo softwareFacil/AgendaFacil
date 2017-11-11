@@ -102,6 +102,19 @@ export class UserService{
                       .map( res => res.json());
   }
 
+  getEventsOf( org ){
+    return  this._http.get( this.url + '/getEventsByOrg/' + org)
+                      .map( res => res.json());
+  }
+
+  deleteEvent( event ){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this._http
+               .delete( this.url + '/removeEvent/' + event._id, {headers: headers})
+               .map(res => res.json());
+  }
+
   getEventsImg(imageFile:String){
     return  this._http.get( this.url + '/get-img/' + imageFile )
                       .map( res => res.json());
@@ -109,6 +122,11 @@ export class UserService{
 
   getUser(){
     return  this._http.get( this.url + '/users/' )
+                      .map( res => res.json());
+  }
+
+  getCategories(){
+    return  this._http.get( this.url + '/getCategories/' )
                       .map( res => res.json());
   }
 

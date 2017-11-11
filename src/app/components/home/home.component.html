@@ -23,14 +23,24 @@
 <div class="container">
   <div class="card-columns">
 
-    <div class="card" *ngFor="let item of (events)?.reverse()">
+    <div class="card" *ngFor="let item of events">
       <mat-card>
-        <mat-card-header>
+        <mat-card-header class="cardH">
           <img mat-card-avatar src="{{ this.icon + item.icon}}">
           <mat-card-title>{{ item.org }}</mat-card-title>
           <mat-card-subtitle>{{ item.tipo }}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="{{ this.img + item.image }}">
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="menuT" *ngIf="identity">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>edit</mat-icon>
+            <span>Editar</span>
+          </button>
+        </mat-menu>
+        <img class="imgEvent" mat-card-image src="{{ this.img + item.image }}">
+
         <mat-card-content>
           <h2>{{ item.name }}</h2>
           <p>{{ item.descripcion }}</p>
