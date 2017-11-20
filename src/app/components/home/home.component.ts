@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/api-rest.service';
-<<<<<<< HEAD
-=======
-import { Router, ActivatedRoute } from '@angular/router';
-
-
->>>>>>> c7da44314036a1b2139fe33d02d0edd773fd0052
 
 
 @Component({
@@ -36,12 +30,4 @@ export class HomeComponent implements OnInit {
     this.identity = this._apiService.getIdentity();
   }
 
-<<<<<<< HEAD
-=======
-
-  edit(id){
-    this._router.navigate([ 'edit/' + id ]);
-  }
-
->>>>>>> c7da44314036a1b2139fe33d02d0edd773fd0052
 }
