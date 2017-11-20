@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/api-rest.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -28,6 +28,10 @@ export class HomeComponent implements OnInit {
   }
   ngDoCheck(){
     this.identity = this._apiService.getIdentity();
+  }
+
+  edit(id){
+    this._router.navigate([ 'edit/' + id ]);
   }
 
 }

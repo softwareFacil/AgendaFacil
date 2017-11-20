@@ -54,7 +54,7 @@ export class EditComponent implements OnInit {
     this._id = _activateRouter.snapshot.paramMap.get('id');
     this.event = new Events('', '', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
     console.log(this.event)
-    this._apiService.getEventsById(this._id).subscribe( response => { this.event = response; console.log(this.event) })
+    this._apiService.getEventsById(this._id).subscribe( response => { this.event = response; })
     console.log(this.event)
     this.location = new Location( 0, 0, '' );
   }
@@ -88,8 +88,6 @@ export class EditComponent implements OnInit {
     this.geocoder.geocode({'address':address},(results, status)=>{
       if (status.toString() === 'OK') {
         this.map.setCenter(results[0].geometry.location);
-        console.log(results[0].geometry.location.lat());
-        console.log(results[0].geometry.location.lng());
         var marker = new google.maps.Marker({
           map: this.map,
           position: results[0].geometry.location
@@ -141,16 +139,12 @@ export class EditComponent implements OnInit {
             response => {
               if (response.events) {
                 this.status = 'El registro se a realizado correctamente';
-                console.log(response.message);
                 this.snackBar.open(response.message, 'close', { duration: 5000 });
                 this.event = new Events('', '', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
-                console.log(this.location)
                 this._apiService.saveLocation( this.location ).subscribe( response => {
-                  console.log(response);
                 });
               } else {
                 this.status = 'Erros en el registro';
-                console.log(response.message);
                 this.snackBar.open(response.message, 'close', { duration: 2500 });
               }
             }, error => {
