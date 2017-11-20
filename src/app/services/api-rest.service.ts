@@ -126,6 +126,11 @@ export class UserService{
                       .map( res => res.json());
   }
 
+  getEventsById( id ){
+    return  this._http.get( this.url + '/getEventsById/' + id)
+                      .map( res => res.json());
+  }
+
   deleteEvent( event ){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
