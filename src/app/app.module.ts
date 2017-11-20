@@ -33,7 +33,6 @@ import { AgmCoreModule } from '@agm/core';
 import { RequestaccountComponent } from './components/requestaccount/requestaccount.component';
 import { ViewComponent } from './components/view/view.component';
 import { CategoryComponent } from './components/category/category.component';
-import { EditComponent } from './components/edit/edit.component';
 
 
 
@@ -50,8 +49,7 @@ import { EditComponent } from './components/edit/edit.component';
     LayoutComponent,
     RequestaccountComponent,
     ViewComponent,
-    CategoryComponent,
-    EditComponent
+    CategoryComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
