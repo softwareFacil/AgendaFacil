@@ -27,6 +27,7 @@ export class ListcategoryComponent implements OnInit {
   }
 
   goCategory(actividad){
+    console.log(actividad)
     this._router.navigate([ 'category/' + actividad ]);
   }
 
