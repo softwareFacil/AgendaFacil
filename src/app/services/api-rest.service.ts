@@ -121,6 +121,11 @@ export class UserService{
                       .map( res => res.json());
   }
 
+  getEventsById( id ){
+    return  this._http.get( this.url + '/getEventsById/' + id)
+                      .map( res => res.json());
+  }
+
   getEventsByType( type ){
     return  this._http.get( this.url + '/getEventsByType/' + type)
                       .map( res => res.json());
