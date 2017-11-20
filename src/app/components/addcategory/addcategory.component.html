@@ -1,1 +1,19 @@
+<div id="enter">
 
+  <h1>Crear Categoria</h1>
+
+  <hr>
+
+  <form eventForm="ngForm" (ngSubmit)="save()">
+    <mat-form-field class="event-full-width cat">
+      <label>Nombre de la Categoria</label> <input type="text" matInput
+      name="categoria" #categoria="ngModel" [(ngModel)]="category.actividades">
+    </mat-form-field>
+
+    <br>
+
+    <button type="submit" mat-raised-button>Guardar</button>
+
+  </form>
+
+</div>

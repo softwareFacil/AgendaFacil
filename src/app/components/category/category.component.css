@@ -1,0 +1,43 @@
+.imgEvent{
+  height: 220px;
+}
+
+.mat-card{
+  background: #9EE6CF;
+  background: -webkit-linear-gradient(#1EE494 30%, white 30%,white 40%);
+  background: -o-linear-gradient(#1EE494 30%, white 30%,white 40%);
+  background: -moz-linear-gradient(#1EE494 30%, white 30%,white 40%);
+  background: linear-gradient(#1EE494 30%, white 30%,white 40%);
+}
+
+.card{
+  font-size: 4px;
+}
+
+.cardH{
+  height: 80px
+}
+
+.container{
+  margin-top: 20px;
+}
+
+.card-columns {
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(md) {
+    column-count: 3;
+  }
+  @include media-breakpoint-only(sm) {
+    column-count: 2;
+  }
+}
+.menuT{
+  position: absolute;
+  left: 85%;
+  top: 7.5%;
+}

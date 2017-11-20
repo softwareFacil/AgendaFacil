@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(){  }
 
   ngOnInit() {
+
   }
 
 }

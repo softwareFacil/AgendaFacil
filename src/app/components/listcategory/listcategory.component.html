@@ -2,38 +2,22 @@
 <div id="enter">
 
 
-  <h1>Categorias registradas</h1>
+  <h1>Categorias</h1>
+  <br>
+  <table class="table table-responsive">
+    <!-- <tbody>
+      <tr>
+        <th>Categorias</th>
+        <th>Acciones</th>
+      </tr>
+    </tbody> -->
+    <tbody *ngFor="let item of category">
+      <tr>
+        <td><button (click)="goCategory(item.actividades)">{{ item.actividades }}</button></td>
+        <!-- <td><i class="material-icons">delete</i></td> -->
+      </tr>
+    </tbody>
+  </table>
 
-  <div class="example-container mat-elevation-z8">
-    <mat-table #table [dataSource]="dataSource">
-
-
-      <ng-container matColumnDef="position">
-        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-      </ng-container>
-
-
-      <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-      </ng-container>
-
-
-      <ng-container matColumnDef="weight">
-        <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
-      </ng-container>
-
-
-      <ng-container matColumnDef="symbol">
-        <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
-      </ng-container>
-
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
-  </div>
 
 </div>

@@ -87,6 +87,13 @@ export class UserService{
                      .map( res => res.json() );
   }
 
+  saveCategory( name_category ){
+    let params = JSON.stringify( name_category );
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    return this._http.post( this.url + '/saveCategory/', params, { headers:headers } )
+                     .map( res => res.json() );
+  }
+
   validateUser( user ){
     let params = JSON.stringify( user )
     let headers = new Headers();
@@ -111,6 +118,11 @@ export class UserService{
 
   getEventsOf( org ){
     return  this._http.get( this.url + '/getEventsByOrg/' + org)
+                      .map( res => res.json());
+  }
+
+  getEventsByType( type ){
+    return  this._http.get( this.url + '/getEventsByType/' + type)
                       .map( res => res.json());
   }
 

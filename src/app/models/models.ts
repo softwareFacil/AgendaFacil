@@ -33,9 +33,15 @@ export class Events{
 }
 
 export class Location{
-    constructor(
-      public lat: number,
-      public lng: number,
-      public name: string
+  constructor(
+    public lat: number,
+    public lng: number,
+    public name: string
+  ){}
+}
+
+export class Category{
+  constructor(
+    public actividades: string
   ){}
 }
