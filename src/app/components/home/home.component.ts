@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/api-rest.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
 
 
 @Component({
@@ -17,19 +16,17 @@ export class HomeComponent implements OnInit {
   public icon = 'http://agenda.publibarrio.cl:3789/api/get-icon/';
 
   constructor(
-    private _apiService: UserService,
-    private _router: Router
+    private _apiService: UserService
   ) {  }
 
   ngOnInit() {
     this._apiService.getEvents().subscribe( response => { this.events = response.events.reverse();
-      console.log(this.events);
+      console.log(this.events)
     });
     this.identity = this._apiService.getIdentity();
   }
-  ngDoCheck() {
+  ngDoCheck(){
     this.identity = this._apiService.getIdentity();
   }
-
 
 }
