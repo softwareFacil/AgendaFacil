@@ -33,7 +33,7 @@ import { AgmCoreModule } from '@agm/core';
 import { RequestaccountComponent } from './components/requestaccount/requestaccount.component';
 import { ViewComponent } from './components/view/view.component';
 import { CategoryComponent } from './components/category/category.component';
-import { EditComponent } from './components/Edit/Edit.component';
+import { EditComponent } from './components/edit/edit.component';
 
 
 
