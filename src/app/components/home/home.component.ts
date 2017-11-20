@@ -34,4 +34,8 @@ export class HomeComponent implements OnInit {
     this._router.navigate([ 'edit/' + id ]);
   }
 
+  descrip() {
+    this._router.navigate(['view/']);
+  }
+
 }
