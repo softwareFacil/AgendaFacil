@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/api-rest.service';
+<<<<<<< HEAD
 import { Router, ActivatedRoute } from '@angular/router';
+=======
+import { ActivatedRoute, Params, Router } from '@angular/router';
+>>>>>>> c6d17e5328fb05cba58445b7208d6fa684b86d08
 
 
 @Component({
@@ -23,16 +27,19 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this._apiService.getEvents().subscribe( response => { this.events = response.events.reverse();
-      console.log(this.events)
+      console.log(this.events);
     });
     this.identity = this._apiService.getIdentity();
   }
-  ngDoCheck(){
+  ngDoCheck() {
     this.identity = this._apiService.getIdentity();
   }
 
+<<<<<<< HEAD
   edit(id){
     this._router.navigate([ 'edit/' + id ]);
   }
+=======
+>>>>>>> c6d17e5328fb05cba58445b7208d6fa684b86d08
 
 }
