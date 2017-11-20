@@ -1,5 +1,3 @@
-@import "//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700";
-
 #enter {
   max-width: 400px;
   margin: 90px auto;
@@ -17,6 +15,17 @@
 
 .event-form {
   width: 100%;
+}
+
+agm-map {
+  height: 300px;
+}
+i{
+  position: absolute;
+  right: 0px;
+  top: 20px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .box{
@@ -45,6 +54,7 @@
 .inputfile + label {
     max-width: 80%;
     font-size: 1.25rem;
+    /* 20px */
     font-weight: 700;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -52,6 +62,7 @@
     display: inline-block;
     overflow: hidden;
     padding: 0.625rem 1.25rem;
+    /* 10px 20px */
 }
 
 .no-js .inputfile + label {
@@ -64,14 +75,24 @@
     outline: -webkit-focus-ring-color auto 5px;
 }
 
+.inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+}
+
 .inputfile + label svg {
     width: 1em;
     height: 1em;
     vertical-align: middle;
     fill: currentColor;
     margin-top: -0.25em;
+    /* 4px */
     margin-right: 0.25em;
+    /* 4px */
 }
+
+
+/* style 1 */
 
 .inputfile-1 + label {
     color: #f1e5e6;
@@ -88,4 +109,28 @@
 	.inputfile-6 + label strong {
 		display: block;
 	}
+}
+
+#map {
+  height: 360px;
+  width: 360px;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#floating-panel {
+  position: absolute;
+  top: 100px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
 }

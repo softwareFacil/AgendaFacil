@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/api-rest.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit {
   public icon = 'http://agenda.publibarrio.cl:3789/api/get-icon/';
 
   constructor(
-    private _apiService: UserService
+    private _apiService: UserService,
+    private _router: Router
   ) {  }
 
   ngOnInit() {
@@ -27,6 +29,10 @@ export class HomeComponent implements OnInit {
   }
   ngDoCheck(){
     this.identity = this._apiService.getIdentity();
+  }
+
+  edit(id){
+    this._router.navigate([ 'edit/' + id ]);
   }
 
 }

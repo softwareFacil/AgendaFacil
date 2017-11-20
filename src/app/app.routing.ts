@@ -13,6 +13,7 @@ import { RequestaccountComponent } from './components/requestaccount/requestacco
 import { LayoutComponent } from './components/layout/layout.component';
 import { ViewComponent } from './components/view/view.component';
 import { CategoryComponent } from './components/category/category.component';
+import { EditComponent } from './components/edit/edit.component';
 
 
 const APP_ROUTES: Routes = [
@@ -26,6 +27,7 @@ const APP_ROUTES: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'view/:event', component: ViewComponent },
   { path: 'category/:category', component: CategoryComponent },
+  { path: 'edit/:id', component: EditComponent },
   { path: '**', pathMatch: 'full', component: HomeComponent },
 ];
 
