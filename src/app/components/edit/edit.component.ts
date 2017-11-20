@@ -20,6 +20,7 @@ import { UserService } from '../../services/api-rest.service';
 })
 export class EditComponent implements OnInit {
 
+
   public _id;
   public latitude: number;
   public longitude: number;
@@ -27,7 +28,8 @@ export class EditComponent implements OnInit {
   public longitudeMark: number;
   public searchControl: FormControl;
   public zoom: number;
-  public event: Events;
+  public event;
+  ev: Events;
   public location: Location;
   public identity;
   public Fecha: Date;
@@ -53,10 +55,23 @@ export class EditComponent implements OnInit {
   ) {
     this._id = _activateRouter.snapshot.paramMap.get('id');
     this.event = new Events('', '', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
-    console.log(this.event)
-    this._apiService.getEventsById(this._id).subscribe( response => { this.event = response; })
-    console.log(this.event)
+    console.log(this.ev)
+    this._apiService.getEventsById( this._id ).subscribe( response => {
+      this.event.name = response.events.name;
+      this.event.descripcion = response.events.descripcion;
+      this.event.org = response.events.org;
+      this.event.ubicacion.lat = response.events.ubicacion.lat;
+      this.event.ubicacion.long = response.events.ubicacion.long;
+      this.event.ubicacion.nombre = response.events.ubicacion.nombre;
+      this.event.fecha_inicio = response.events.fecha_inicio;
+      this.event.fecha_termino = response.events.fecha_termino;
+      this.event.icon = response.events.icon;
+      this.event.tipo = response.events.tipo;
+      this.event.image = response.events.image;
+      this.event.fono = response.events.fono;
+    });
     this.location = new Location( 0, 0, '' );
+    console.log(this.event)
   }
 
   filterStates(actividades: string) {
@@ -66,6 +81,8 @@ export class EditComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.ev)
+
     this.identity = this._apiService.getIdentity();
     this._apiService.getCategories().subscribe( response => { this.categories = response.Catergories;
     });
