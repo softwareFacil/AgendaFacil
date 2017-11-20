@@ -25,7 +25,7 @@ const APP_ROUTES: Routes = [
   { path: 'listevents', component: ListeventsComponent },
   { path: 'account', component: RequestaccountComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'view/', component: ViewComponent },
+  { path: 'view', component: ViewComponent },
   { path: 'category/:category', component: CategoryComponent },
   { path: 'edit/:id', component: EditComponent },
   { path: '**', pathMatch: 'full', component: HomeComponent },
