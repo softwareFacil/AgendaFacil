@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/api-rest.service';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 import { Router, ActivatedRoute } from '@angular/router';
-=======
-import { ActivatedRoute, Params, Router } from '@angular/router';
->>>>>>> c6d17e5328fb05cba58445b7208d6fa684b86d08
->>>>>>> a8dd48a018504cd0006ff19aa19aa9276dc73ef1
+
+
 
 
 @Component({
@@ -24,7 +19,8 @@ export class HomeComponent implements OnInit {
   public icon = 'http://agenda.publibarrio.cl:3789/api/get-icon/';
 
   constructor(
-    private _apiService: UserService
+    private _apiService: UserService,
+    private _router: Router
   ) {  }
 
   ngOnInit() {
@@ -37,14 +33,9 @@ export class HomeComponent implements OnInit {
     this.identity = this._apiService.getIdentity();
   }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
   edit(id){
     this._router.navigate([ 'edit/' + id ]);
   }
-=======
->>>>>>> c6d17e5328fb05cba58445b7208d6fa684b86d08
 
->>>>>>> a8dd48a018504cd0006ff19aa19aa9276dc73ef1
 }

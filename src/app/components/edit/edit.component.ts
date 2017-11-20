@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
 import { MatSnackBar } from '@angular/material';
-import {ActivatedRoute, Params, Router} from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { UserService } from '../../services/api-rest.service';
 
 @Component({
@@ -52,9 +52,9 @@ export class EditComponent implements OnInit {
     private snackBar: MatSnackBar
   ) {
     this._id = _activateRouter.snapshot.paramMap.get('id');
-    this.event = new Events('', 'test', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
+    this.event = new Events('', '', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
     console.log(this.event)
-    this._apiService.getEventsById(this._id).subscribe( response => { this.event = response.events; console.log(this.event) })
+    this._apiService.getEventsById(this._id).subscribe( response => { this.event = response; console.log(this.event) })
     console.log(this.event)
     this.location = new Location( 0, 0, '' );
   }
