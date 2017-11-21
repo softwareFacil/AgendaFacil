@@ -30,7 +30,7 @@
           <mat-card-title>{{ item.org }}</mat-card-title>
           <mat-card-subtitle>{{ item.tipo }}</mat-card-subtitle>
         </mat-card-header>
-        <button mat-icon-button [matMenuTriggerFor]="menu" class="menuT" *ngIf="identity">
+        <!-- <button mat-icon-button [matMenuTriggerFor]="menu" class="menuT" *ngIf="identity">
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
@@ -38,7 +38,7 @@
             <mat-icon>edit</mat-icon>
             <span>Editar</span>
           </button>
-        </mat-menu>
+        </mat-menu> -->
         <img class="imgEvent" mat-card-image src="{{ this.img + item.image }}">
 
         <mat-card-content (click)="descrip(item)">

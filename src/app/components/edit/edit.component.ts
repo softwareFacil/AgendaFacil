@@ -132,30 +132,21 @@ export class EditComponent implements OnInit {
     this.location.lat = this.event.ubicacion.lat;
     this.location.lng = this.event.ubicacion.long;
     this.location.name = this.event.ubicacion.nombre;
-    if (this.files) {
-      this._apiService.saveImg([], this.files, 'image')
-        .then((result: any) => {
-          this.event.image = result.image;
-          this._apiService.saveEvent(this.event).subscribe(
-            response => {
-              if (response.events) {
-                this.status = 'El registro se a realizado correctamente';
-                this.snackBar.open(response.message, 'close', { duration: 5000 });
-                this.event = new Events('', '', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
-                this._apiService.saveLocation( this.location ).subscribe( response => {
-                });
-              } else {
-                this.status = 'Erros en el registro';
-                this.snackBar.open(response.message, 'close', { duration: 2500 });
-              }
-            }, error => {
-              console.log(<any>error);
-            }
-          );
-        });
-    } else {
-      this.snackBar.open('Seleccione una imagen', 'close', { duration: 5000 });
-    }
+    console.log(this.event)
+    this._apiService.updateEvent(this.event,this.event._id).subscribe(
+      response => {
+        if (response.events) {
+          this.snackBar.open(response.message, 'close', { duration: 5000 });
+          this._apiService.saveLocation( this.location ).subscribe( response => {
+          });
+        } else {
+          this.snackBar.open(response.message, 'close', { duration: 2500 });
+        }
+      }, error => {
+        console.log(<any>error);
+      }
+    );
+
 
   }
 

@@ -94,6 +94,13 @@ export class UserService{
                      .map( res => res.json() );
   }
 
+  updateEvent( data_to_Event, id ){
+    let params = JSON.stringify( data_to_Event );
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    return this._http.put( this.url + '/updateEvent/' + id, params, { headers:headers } )
+                     .map( res => res.json() );
+  }
+
   validateUser( user ){
     let params = JSON.stringify( user )
     let headers = new Headers();

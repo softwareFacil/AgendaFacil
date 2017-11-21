@@ -27,10 +27,10 @@
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>
+            <!-- <button mat-menu-item>
               <mat-icon>edit</mat-icon>
               <span>Editar Perfil</span>
-            </button>
+            </button> -->
             <button mat-menu-item (click)='logout()'>
               <mat-icon>exit_to_app</mat-icon>
               <span>Salir</span>
@@ -45,8 +45,8 @@
           </span>
           <button mat-button [routerLink]="['../login']" class="requestIn">Entrar</button>
           <a href="#" class="request" [routerLink]="['../account']">Registro</a>
-          <a class="request">/</a>
-          <a href="#" class="request">Recuperar</a>
+          <!-- <a class="request">/</a>
+          <a href="#" class="request">Recuperar</a> -->
         </div>
       </mat-toolbar>
 

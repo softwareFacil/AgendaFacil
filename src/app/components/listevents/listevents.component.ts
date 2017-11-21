@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/api-rest.service';
 import { Events } from '../../models/models';
 import { MatSnackBar } from '@angular/material';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class ListeventsComponent implements OnInit {
 
   constructor(
     private _apiService: UserService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private _router: Router
   ) {
     // this.data = new Events('', '', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
   }
@@ -31,6 +33,10 @@ export class ListeventsComponent implements OnInit {
     this._apiService.deleteEvent( event ).subscribe( response => {
       this.snackBar.open( response.message, 'close', { duration: 2500});
     });
+  }
+
+  edit(event){
+    this._router.navigate([ 'edit/' + event._id ]);
   }
 
 }
