@@ -13,9 +13,9 @@
     <mat-form-field class="event-full-width">
       <label>Tipo de evento</label>
       <input matInput aria-label="State" [matAutocomplete]="auto" [formControl]="stateCtrl"
-      name="tipo" #tipo>
+      name="tipo" #tipo [(ngModel)]="event.tipo">
       <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+        <mat-option *ngFor="let state of filteredStates | async" [value]="state.actividades">
           <span>{{ state.actividades }}</span>
         </mat-option>
       </mat-autocomplete>

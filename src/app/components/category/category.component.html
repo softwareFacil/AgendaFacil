@@ -12,14 +12,14 @@
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>
+          <button mat-menu-item (click)="edit(item._id)">
             <mat-icon>edit</mat-icon>
             <span>Editar</span>
           </button>
         </mat-menu>
         <img class="imgEvent" mat-card-image src="{{ this.img + item.image }}">
 
-        <mat-card-content>
+        <mat-card-content (click)="descrip(item)">
           <h2>{{ item.name }}</h2>
           <p>{{ item.descripcion }}</p>
         </mat-card-content>

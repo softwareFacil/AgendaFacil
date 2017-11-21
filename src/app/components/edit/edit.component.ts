@@ -54,24 +54,8 @@ export class EditComponent implements OnInit {
     private snackBar: MatSnackBar
   ) {
     this._id = _activateRouter.snapshot.paramMap.get('id');
-    this.event = new Events('', '', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
-    console.log(this.ev)
-    this._apiService.getEventsById( this._id ).subscribe( response => {
-      this.event.name = response.events.name;
-      this.event.descripcion = response.events.descripcion;
-      this.event.org = response.events.org;
-      this.event.ubicacion.lat = response.events.ubicacion.lat;
-      this.event.ubicacion.long = response.events.ubicacion.long;
-      this.event.ubicacion.nombre = response.events.ubicacion.nombre;
-      this.event.fecha_inicio = response.events.fecha_inicio;
-      this.event.fecha_termino = response.events.fecha_termino;
-      this.event.icon = response.events.icon;
-      this.event.tipo = response.events.tipo;
-      this.event.image = response.events.image;
-      this.event.fono = response.events.fono;
-    });
+
     this.location = new Location( 0, 0, '' );
-    console.log(this.event)
   }
 
   filterStates(actividades: string) {
@@ -81,16 +65,18 @@ export class EditComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.ev)
-
     this.identity = this._apiService.getIdentity();
-    this._apiService.getCategories().subscribe( response => { this.categories = response.Catergories;
-    });
+    this._apiService.getCategories().subscribe( response => { this.categories = response.Catergories; });
     this.stateCtrl = new FormControl();
     this.filteredStates = this.stateCtrl.valueChanges
       .startWith(null)
       .map(state => state ? this.filterStates(state) : this.categories.slice());
     this.searchControl = new FormControl();
+    this.event = new Events('', '', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
+    this._apiService.getEventsById( this._id ).subscribe( response => {
+      this.event = response.events;
+      this.geocodeAddres(this.event.ubicacion.nombre);
+    });
   }
 
   ngAfterViewInit() {
@@ -101,7 +87,6 @@ export class EditComponent implements OnInit {
   }
 
   geocodeAddres(address){
-    //address = address.toString();
     this.geocoder.geocode({'address':address},(results, status)=>{
       if (status.toString() === 'OK') {
         this.map.setCenter(results[0].geometry.location);
@@ -138,7 +123,6 @@ export class EditComponent implements OnInit {
 
   onChange(event) {
     this.files = event.srcElement.files;
-    // this.event.image = this.files[0].name;
   }
 
   onSubmit(desc: string) {

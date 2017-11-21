@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/api-rest.service';
-import {ActivatedRoute, Params, Router} from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-category',
@@ -18,15 +18,28 @@ export class CategoryComponent implements OnInit {
 
   constructor(
     private _apiService: UserService,
-    private __activateRouter: ActivatedRoute
+    private _activateRouter: ActivatedRoute,
+    private _router: Router
   ) {
-    this.type = __activateRouter.snapshot.paramMap.get('category')
+    this.type = _activateRouter.snapshot.paramMap.get('category')
   }
 
   ngOnInit() {
     this._apiService.getEventsByType( this.type ).subscribe( response => { this.events = response.events.reverse();
     });
     this.identity = this._apiService.getIdentity();
+  }
+
+  ngDoCheck(){
+    this.identity = this._apiService.getIdentity();
+  }
+
+  edit(id){
+    this._router.navigate([ 'edit/' + id ]);
+  }
+
+  descrip(evento) {
+    this._router.navigate(['view/', evento]);
   }
 
 }
