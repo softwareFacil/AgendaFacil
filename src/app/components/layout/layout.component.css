@@ -34,7 +34,13 @@ mat-sidenav{
 }
 
 .top_logo{
-  display: flex;
+  /*display: flex;*/
+}
+
+.lg{
+  z-index: 1000 !important;
+  width: 200px;
+  height: 200px;
 }
 
 .top_user{
@@ -44,6 +50,7 @@ mat-sidenav{
   padding: 1.7em 0.5em 0.5em 0.5em;
   height: 6em;
   box-shadow: 0px 3px 13px -3px rgba( 0, 0, 0, 0.75 );
+  z-index: -90 !important;
 }
 
 .top_user img{
@@ -155,8 +162,8 @@ mat-sidenav{
 
 .logo-toogle{
   background-color: #585858;
-  color: white;
-  font-size: 15px;
+  /*color: white;
+  font-size: 15px;*/
   /*background-color: white;*/
 }
 
