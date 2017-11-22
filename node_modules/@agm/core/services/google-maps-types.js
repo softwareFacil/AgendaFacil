@@ -6,18 +6,18 @@ export var google;
  */
 export var ControlPosition;
 (function (ControlPosition) {
-    ControlPosition[ControlPosition["BOTTOM_CENTER"] = 0] = "BOTTOM_CENTER";
-    ControlPosition[ControlPosition["BOTTOM_LEFT"] = 1] = "BOTTOM_LEFT";
-    ControlPosition[ControlPosition["BOTTOM_RIGHT"] = 2] = "BOTTOM_RIGHT";
-    ControlPosition[ControlPosition["LEFT_BOTTOM"] = 3] = "LEFT_BOTTOM";
+    ControlPosition[ControlPosition["RIGHT_BOTTOM"] = 0] = "RIGHT_BOTTOM";
+    ControlPosition[ControlPosition["TOP_LEFT"] = 1] = "TOP_LEFT";
+    ControlPosition[ControlPosition["TOP_CENTER"] = 2] = "TOP_CENTER";
+    ControlPosition[ControlPosition["TOP_RIGHT"] = 3] = "TOP_RIGHT";
     ControlPosition[ControlPosition["LEFT_CENTER"] = 4] = "LEFT_CENTER";
     ControlPosition[ControlPosition["LEFT_TOP"] = 5] = "LEFT_TOP";
-    ControlPosition[ControlPosition["RIGHT_BOTTOM"] = 6] = "RIGHT_BOTTOM";
-    ControlPosition[ControlPosition["RIGHT_CENTER"] = 7] = "RIGHT_CENTER";
-    ControlPosition[ControlPosition["RIGHT_TOP"] = 8] = "RIGHT_TOP";
-    ControlPosition[ControlPosition["TOP_CENTER"] = 9] = "TOP_CENTER";
-    ControlPosition[ControlPosition["TOP_LEFT"] = 10] = "TOP_LEFT";
-    ControlPosition[ControlPosition["TOP_RIGHT"] = 11] = "TOP_RIGHT";
+    ControlPosition[ControlPosition["LEFT_BOTTOM"] = 6] = "LEFT_BOTTOM";
+    ControlPosition[ControlPosition["RIGHT_TOP"] = 7] = "RIGHT_TOP";
+    ControlPosition[ControlPosition["RIGHT_CENTER"] = 8] = "RIGHT_CENTER";
+    ControlPosition[ControlPosition["BOTTOM_RIGHT"] = 9] = "BOTTOM_RIGHT";
+    ControlPosition[ControlPosition["BOTTOM_LEFT"] = 10] = "BOTTOM_LEFT";
+    ControlPosition[ControlPosition["BOTTOM_CENTER"] = 11] = "BOTTOM_CENTER";
 })(ControlPosition || (ControlPosition = {}));
 export var MapTypeId;
 (function (MapTypeId) {

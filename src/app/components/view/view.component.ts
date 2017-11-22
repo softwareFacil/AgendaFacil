@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
+
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
@@ -18,5 +20,4 @@ export class ViewComponent implements OnInit {
       this.evento = params;
    });
   }
-
 }
