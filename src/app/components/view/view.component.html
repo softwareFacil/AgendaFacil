@@ -1,13 +1,11 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
+      <!-- Example 1 -->
+  <!--<span class="card-title"> <code>user-card</code> without md-color features</span>
+  <regular-card name="User name" md-theme="default"></regular-card>-->
+      <img class="imgEvent" mat-card-image src="{{ this.img + evento.image }}">
       <h1 class="display-3">{{evento.name}}</h1>
       <p class="lead">{{evento.org}}</p>
+      <p>{{evento.descripcion}}</p>
     </div>
-  </div>
-  <div class="container">
-      <div class="row">
-          <div class="col-12">
-              <p>{{evento.descripcion}}</p>
-          </div>
-      </div>
   </div>

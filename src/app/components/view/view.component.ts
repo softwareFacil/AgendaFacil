@@ -7,6 +7,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ViewComponent implements OnInit {
   evento:any;
+  public img = 'http://agenda.publibarrio.cl:3789/api/get-img/';
+  public icon = 'http://agenda.publibarrio.cl:3789/api/get-icon/';
 
   constructor(private route: ActivatedRoute){  }
 
