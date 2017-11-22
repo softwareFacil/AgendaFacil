@@ -52,18 +52,20 @@ mat-card{
 
 .mat-card{
   background: #9EE6CF;
-  background: -webkit-linear-gradient(#1EE494 30%, white 30%,white 40%);
-  background: -o-linear-gradient(#1EE494 30%, white 30%,white 40%);
-  background: -moz-linear-gradient(#1EE494 30%, white 30%,white 40%);
-  background: linear-gradient(#1EE494 30%, white 30%,white 40%);
+  background: -webkit-linear-gradient(#E52E33 30%, white 30%,white 40%);
+  background: -o-linear-gradient(#E52E33 30%, white 30%,white 40%);
+  background: -moz-linear-gradient(#E52E33 30%, white 30%,white 40%);
+  background: linear-gradient(#E52E33 30%, white 30%,white 40%);
 }
 
 .card{
   font-size: 4px;
+  color: white !important;
 }
 
 .cardH{
-  height: 80px
+  /*height: 80px;*/
+  /*color: #DAF7A6 !important;*/
 }
 
 .container{

@@ -1,4 +1,3 @@
-@import "//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css";
 @import "//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700";
 
 #enter {
@@ -17,4 +16,19 @@
 
 .login-full-width {
   width: 100%;
+}
+.request{
+  font-size: 13px;
+  background: none;
+  position: relative;
+  top: 20px;
+  color: black;
+}
+.btnL{
+  width: 340px;
+}
+
+.btnL:hover{
+  background-color: #FF5733;
+  color: white;
 }

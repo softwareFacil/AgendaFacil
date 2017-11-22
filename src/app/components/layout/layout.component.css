@@ -116,7 +116,7 @@ mat-sidenav{
 }
 
 .vertical-menu-item:hover{
-  background-color: #1EE494;
+  background-color: #FF5733;
   color: black;
 }
 .menu{
@@ -142,25 +142,26 @@ mat-sidenav{
 }
 
 .navbar{
-  background-color: #DAF7A6;
+  background-color: #FF5733;
   border-radius: 0px;
   color: white;
   box-shadow: 0px 3px 13px -3px rgba( 0, 0, 0, 0.75 );
 }
 
 .toogle:hover{
-  background-color: #1EE494;
+  background-color: #FF5733;
   color: black;
 }
 
 .logo-toogle{
-  background-color: #DAF7A6;
+  background-color: #585858;
   color: white;
+  font-size: 15px;
   /*background-color: white;*/
 }
 
 .menu-toogle{
-  background-color: #DAF7A6;
+  background-color: #585858;
   /*background: -webkit-linear-gradient(#69d0b3, white);
   background: -o-linear-gradient(#69d0b3, white);
   background: -moz-linear-gradient(#69d0b3, white);
