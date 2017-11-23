@@ -1,39 +1,8 @@
-<!-- <div class="container">
-  <div class="card-columns">
-      <img class="img-fluid" mat-card-image src="{{ this.img + evento.image }}">
-        <mat-card-header>
-      <h1 class="display-3">{{evento.name}}</h1>
-      <p class="lead">{{evento.org}}</p>
-    </mat-card-header>
-        <mat-card-content>
-      <p>{{evento.descripcion}}</p>
-    </mat-card-content>
-    </div>
-  </div> -->
-
-  <!--<div>
-      <div item-start>
-        <img src="{{ this.img + evento.image }}">
-      <div>
-      <h2 text-wrap>{{evento.name}}</h2>
-      <p>{{evento.fecha_inicio}}</p>
-      <p>{{evento.fecha_termino}}</p>
-    </div>
-    <div>
-      <h2>Detalles</h2>
-      <p text-wrap>{{evento.descripcion}}</p>
-    </div>
-
-    <div>
-      <div>{{evento.ubicacion.nombre}}</div>
-      <div>{{evento.}}
-    </div>
-  </div>
-</div>-->
-
-
 <div class="container">
   <mat-card>
+    <mat-list-item>
+      <img src="{{ evento.icon + evento.icon}}">
+    </mat-list-item>
     <img src="{{ this.img + evento.image }}" class="img-fluid">
     <mat-card-content>
       <h2>{{evento.name}}</h2>
@@ -42,8 +11,6 @@
     <mat-card-footer>
       <p>{{evento.fecha_inicio}}</p>
       <p>{{evento.fecha_termino}}</p>
-      <p>{{evento.org}}</p>
-      <p>{{evento.ubicacion.nombre}}</p>
       <agm-map [latitude]="evento.ubicacion.lat" [longitude]="evento.ubicacion.long"  [zoom]="13" [scrollwheel]="false" [mapDraggable]="false">
   <agm-marker [latitude]="evento.ubicacion.lat" [longitude]="evento.ubicacion.long"></agm-marker>
 </agm-map>
