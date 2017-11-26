@@ -52,10 +52,10 @@ mat-card{
 
 .mat-card{
   background: #9EE6CF;
-  background: -webkit-linear-gradient(#E52E33 30%, white 30%,white 40%);
-  background: -o-linear-gradient(#E52E33 30%, white 30%,white 40%);
-  background: -moz-linear-gradient(#E52E33 30%, white 30%,white 40%);
-  background: linear-gradient(#E52E33 30%, white 30%,white 40%);
+  background: -webkit-linear-gradient(#ff5733 30%, white 30%,white 40%);
+  background: -o-linear-gradient(#ff5733 30%, white 30%,white 40%);
+  background: -moz-linear-gradient(#ff5733 30%, white 30%,white 40%);
+  background: linear-gradient(#ff5733 30%, white 30%,white 40%);
 }
 
 .card{
