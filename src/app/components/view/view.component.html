@@ -1,19 +1,16 @@
-<div class="container">
-  <mat-card>
-    <mat-list-item>
-      <img src="{{ evento.icon + evento.icon}}">
-    </mat-list-item>
-    <img src="{{ this.img + evento.image }}" class="img-fluid">
-    <mat-card-content>
-      <h2>{{evento.name}}</h2>
-      <p>{{evento.descripcion}}</p>
-    </mat-card-content>
-    <mat-card-footer>
-      <p>{{evento.fecha_inicio}}</p>
-      <p>{{evento.fecha_termino}}</p>
-      <agm-map [latitude]="evento.ubicacion.lat" [longitude]="evento.ubicacion.long"  [zoom]="13" [scrollwheel]="false" [mapDraggable]="false">
-  <agm-marker [latitude]="evento.ubicacion.lat" [longitude]="evento.ubicacion.long"></agm-marker>
-</agm-map>
-    </mat-card-footer>
-  </mat-card>
-</div>
+
+<mat-card class="container">
+  <mat-list-item>
+    <img src="{{ evento.icon + evento.icon}}">
+  </mat-list-item>
+  <img src="{{ this.img + evento.image }}" class="img-fluid">
+  <mat-card-content>
+    <h2>{{evento.name}}</h2>
+    <p>{{evento.descripcion}}</p>
+  </mat-card-content>
+  <mat-card-footer>
+    <p>{{evento.fecha_inicio}}</p>
+    <p>{{evento.fecha_termino}}</p>
+    <div id="map"></div>
+  </mat-card-footer>
+</mat-card>
