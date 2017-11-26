@@ -14,6 +14,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { ViewComponent } from './components/view/view.component';
 import { CategoryComponent } from './components/category/category.component';
 import { EditComponent } from './components/edit/edit.component';
+import { EditorgComponent } from './components/editorg/editorg.component';
+import { ListorgComponent } from './components/listorg/listorg.component';
 
 
 const APP_ROUTES: Routes = [
@@ -28,6 +30,8 @@ const APP_ROUTES: Routes = [
   { path: 'view', component: ViewComponent },
   { path: 'category/:category', component: CategoryComponent },
   { path: 'edit/:id', component: EditComponent },
+  { path: 'editorg/:id', component: EditorgComponent },
+  { path: 'listorg', component: ListorgComponent },
   { path: '**', pathMatch: 'full', component: HomeComponent },
 ];
 

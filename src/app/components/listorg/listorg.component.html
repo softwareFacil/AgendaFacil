@@ -1,0 +1,24 @@
+<div id="enter">
+
+  <h1>Solicitudes de cuenta</h1>
+
+  <table class="table table-responsive">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Organizacion</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Telefono</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of data">
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.fono }}</td>
+        <td><i class="material-icons" (click)="edit( item._id )"><i class="material-icons">mode_edit</i></i><i class="material-icons" (click)="delete( item )">delete</i></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

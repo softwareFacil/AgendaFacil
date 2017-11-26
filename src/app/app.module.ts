@@ -34,6 +34,8 @@ import { RequestaccountComponent } from './components/requestaccount/requestacco
 import { ViewComponent } from './components/view/view.component';
 import { CategoryComponent } from './components/category/category.component';
 import { EditComponent } from './components/edit/edit.component';
+import { ListorgComponent } from './components/listorg/listorg.component';
+import { EditorgComponent } from './components/editorg/editorg.component';
 
 
 
@@ -51,7 +53,9 @@ import { EditComponent } from './components/edit/edit.component';
     RequestaccountComponent,
     ViewComponent,
     CategoryComponent,
-    EditComponent
+    EditComponent,
+    ListorgComponent,
+    EditorgComponent
   ],
   imports: [
     AgmCoreModule.forRoot({

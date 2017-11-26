@@ -8,8 +8,8 @@
 
       <form class="login-form" loginForm="ngForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="login-full-width">
-          <input type="text" matInput placeholder="Correo" value="" name="user"
-          #name="ngModel" [(ngModel)]="user.name">
+          <input type="email" matInput placeholder="Correo" value="" name="user"
+          #name="ngModel" [(ngModel)]="user.email">
 
           <span *ngIf="!name.valid && name.touched">
             El usuarios es obligatoria

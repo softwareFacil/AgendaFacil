@@ -101,6 +101,13 @@ export class UserService{
                      .map( res => res.json() );
   }
 
+  updateUser( user, id ){
+    let params = JSON.stringify( user );
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    return this._http.put( this.url + '/updateUser/' + id, params, { headers:headers } )
+                     .map( res => res.json() );
+  }
+
   validateUser( user ){
     let params = JSON.stringify( user )
     let headers = new Headers();
@@ -138,6 +145,11 @@ export class UserService{
                       .map( res => res.json());
   }
 
+  getUserById( id ){
+    return  this._http.get( this.url + '/getUserById/' + id)
+                      .map( res => res.json());
+  }
+
   deleteEvent( event ){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -153,6 +165,11 @@ export class UserService{
 
   getUser(){
     return  this._http.get( this.url + '/users/' )
+                      .map( res => res.json());
+  }
+
+  getAllUser(){
+    return  this._http.get( this.url + '/getAllUsers/' )
                       .map( res => res.json());
   }
 

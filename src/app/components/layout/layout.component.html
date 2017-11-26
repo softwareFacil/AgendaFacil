@@ -5,8 +5,8 @@
       <mat-toolbar class="top_logo logo-toogle">
         <span>
           <img class="lg" src="/assets/img/logo.svg">
-          PUBLIBARRIO
         </span>
+        PUBLIBARRIO
       </mat-toolbar>
 
       <mat-toolbar class="top_user" *ngIf="identity">
@@ -28,10 +28,10 @@
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <!-- <button mat-menu-item>
+            <button mat-menu-item (click)='edit(identity._id)'>
               <mat-icon>edit</mat-icon>
               <span>Editar Perfil</span>
-            </button> -->
+            </button>
             <button mat-menu-item (click)='logout()'>
               <mat-icon>exit_to_app</mat-icon>
               <span>Salir</span>
@@ -85,12 +85,12 @@
           </div>
 
 
-          <!-- <div class="vertical-menu" routerLinkActive="active" *ngIf="identity.role == 'ROLE_ADMIN'">
-            <a class="vertical-menu-item" [routerLink]="['../addspace']">
-              <mat-icon>add_location</mat-icon>
-              Crear Espacios
+          <div class="vertical-menu" routerLinkActive="active" *ngIf="identity.role == 'ROLE_ADMIN'">
+            <a class="vertical-menu-item" [routerLink]="['../listorg']">
+              <mat-icon><i class="material-icons">supervisor_account</i></mat-icon>
+              Lista de Usuarios
             </a>
-          </div> -->
+          </div>
 
           <div class="vertical-menu" routerLinkActive="active" *ngIf="identity.role == 'ROLE_USER'">
             <a class="vertical-menu-item" [routerLink]="['../addevents']">
