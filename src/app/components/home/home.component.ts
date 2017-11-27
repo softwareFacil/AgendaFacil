@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   ) {  }
 
   ngOnInit() {
-    this._apiService.getEvents().subscribe( response => { this.events = response.events.reverse(); });
+    this._apiService.getEvents().subscribe( response => { this.events = response.events.reverse(); console.log(this.events)});
     this.identity = this._apiService.getIdentity();
 
   }
@@ -34,8 +34,7 @@ export class HomeComponent implements OnInit {
   }
 
   descrip(evento) {
-    evento.lat = evento.ubicacion.lat;
-    evento.long = evento.ubicacion.long;
+    evento.ubicacion = evento.ubicacion.nombre;
     this._router.navigate(['view/', evento]);
   }
 
