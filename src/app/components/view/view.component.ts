@@ -23,7 +23,6 @@ export class ViewComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log(params);
       this.evento = params;
       this.geocode(this.evento);
     });
