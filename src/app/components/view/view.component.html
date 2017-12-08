@@ -1,16 +1,18 @@
 
 <mat-card class="container">
-  <mat-list-item>
-    <img src="{{ this.icon + evento.icon}}">
-  </mat-list-item>
-  <img src="{{ this.img + evento.image }}" class="img-fluid">
-  <mat-card-content>
-    <h2>{{evento.name}}</h2>
-    <p>{{evento.descripcion}}</p>
-  </mat-card-content>
-  <mat-card-footer>
-    <p>{{evento.fecha_inicio}}</p>
-    <p>{{evento.fecha_termino}}</p>
-    <div id="map"></div>
-  </mat-card-footer>
+  <mat-card class="card">
+    <mat-list-item>
+      <img mat-card-avatar class="icon" src="{{ this.icon + evento.icon}}">
+      <img src="{{ this.img + evento.image }}" class="img-fluid">
+    </mat-list-item>
+    <mat-card-content>
+      <h2>{{evento.name}}</h2>
+      <p>{{evento.descripcion}}</p>
+    </mat-card-content>
+    <mat-card-footer>
+      <p>Fecha de Inicio : {{evento.fecha_inicio}}</p>
+      <p>Fecha de termino : {{evento.fecha_termino}}</p>
+      <div id="map"></div>
+    </mat-card-footer>
+  </mat-card>
 </mat-card>

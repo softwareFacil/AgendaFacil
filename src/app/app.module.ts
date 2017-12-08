@@ -16,6 +16,7 @@ import { MatAutocompleteModule } from '@angular/material';
 import { FormControl } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material';
 import { MatSnackBarModule } from '@angular/material';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 //Componenetes
 import { APP_ROUTING } from './app.routing';
@@ -70,6 +71,7 @@ import { SearchPipe } from './pipes/search.pipes';
     HttpModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatCardModule,
     MatMenuModule,
     MatToolbarModule,
