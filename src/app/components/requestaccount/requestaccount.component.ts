@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/models';
+import { FormControl } from '@angular/forms';
 import { UserService } from '../../services/api-rest.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/startWith';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-requestaccount',
@@ -15,6 +18,11 @@ export class RequestaccountComponent implements OnInit {
 
   public user: User;
   public files;
+  public type;
+  stateCtrl: FormControl;
+  filteredStates: Observable<any[]>;
+
+  types: any[] = [];
 
   constructor(
     private _route: ActivatedRoute,
@@ -26,6 +34,17 @@ export class RequestaccountComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._userService.getTypes().subscribe( response => { this.types = response.Tipos; });
+    this.stateCtrl = new FormControl();
+    this.filteredStates = this.stateCtrl.valueChanges
+      .startWith(null)
+      .map(state => state ? this.filterStates(state) : this.types.slice());
+  }
+
+  filterStates(nombre: string) {
+    this.type = nombre;
+    return this.types.filter(state =>
+      state.nombre.toLowerCase().indexOf(nombre.toLowerCase()) === 0);
   }
 
   onChange(event) {
@@ -38,20 +57,33 @@ export class RequestaccountComponent implements OnInit {
     }else{
       this.user.password = '';
     }
+
+    let trueType = false;
+
+    for (let i = 0; i < this.types.length; i++) {
+      if (this.types[i].nombre == this.type) {
+        trueType = true;
+      }
+    }
+
     if (this.files) {
-      this._userService.saveIcon( [], this.files, 'image' )
-          .then(( result: any ) => {
-            this.user.foto = result.image;
-            this._userService.saveUser( this.user ).subscribe(
-              response => {
-                if (response.user) {
-                  console.log(response.message)
-                  this.snackBar.open( response.message, 'close', { duration: 5000});
-                }else{
-                  this.snackBar.open( response.message, 'close', { duration: 5000});
-                }
-              });
-           });
+      if (trueType) {
+        this._userService.saveIcon( [], this.files, 'image' )
+            .then(( result: any ) => {
+              this.user.foto = result.image;
+              this._userService.saveUser( this.user ).subscribe(
+                response => {
+                  if (response.user) {
+                    console.log(response.message)
+                    this.snackBar.open( response.message, 'close', { duration: 5000});
+                  }else{
+                    this.snackBar.open( response.message, 'close', { duration: 5000});
+                  }
+                });
+             });
+      }else{
+        this.snackBar.open( 'Seleccione un tipo de usuario valido', 'close', { duration: 5000});
+      }
     }else{
       this.snackBar.open( 'Seleccione una imagen y/o complete los campos faltantes.', 'close', { duration: 5000});
     }
