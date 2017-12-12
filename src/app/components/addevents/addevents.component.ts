@@ -129,30 +129,43 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
     this.location.lat = this.event.ubicacion.lat;
     this.location.lng = this.event.ubicacion.long;
     this.location.name = this.event.ubicacion.nombre;
+
+    let trueType = false;
+
+    for (let i = 0; i < this.categories.length; i++) {
+      if (this.categories[i].actividades == this.event.tipo) {
+        trueType = true;
+      }
+    }
+
     if (this.files) {
       this._userService.saveImg([], this.files, 'image')
         .then((result: any) => {
           this.event.image = result.image;
-          this._userService.saveEvent(this.event).subscribe(
-            response => {
-              if (response.events) {
-                this.status = 'El registro se a realizado correctamente';
-                console.log(response.message);
-                this.snackBar.open(response.message, 'close', { duration: 5000 });
-                this.event = new Events('', '', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
-                console.log(this.location)
-                this._userService.saveLocation( this.location ).subscribe( response => {
-                  console.log(response);
-                });
-              } else {
-                this.status = 'Erros en el registro';
-                console.log(response.message);
-                this.snackBar.open(response.message, 'close', { duration: 2500 });
+          if (trueType) {
+            this._userService.saveEvent(this.event).subscribe(
+              response => {
+                if (response.events) {
+                  this.status = 'El registro se a realizado correctamente';
+                  console.log(response.message);
+                  this.snackBar.open(response.message, 'close', { duration: 5000 });
+                  this.event = new Events('', '', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
+                  console.log(this.location)
+                  this._userService.saveLocation( this.location ).subscribe( response => {
+                    console.log(response);
+                  });
+                } else {
+                  this.status = 'Erros en el registro';
+                  console.log(response.message);
+                  this.snackBar.open(response.message, 'close', { duration: 2500 });
+                }
+              }, error => {
+                console.log(<any>error);
               }
-            }, error => {
-              console.log(<any>error);
-            }
-          );
+            );
+          }else{
+            this.snackBar.open( 'Seleccione un tipo de evento valido', 'close', { duration: 5000});
+          }
         });
     } else {
       this.snackBar.open('Seleccione una imagen', 'close', { duration: 5000 });
