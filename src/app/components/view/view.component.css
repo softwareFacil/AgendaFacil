@@ -15,6 +15,12 @@
     /*height: 300px;  Or whatever */
     background-color: #FFFFFF;
 }
+.nombre{
+  margin-left: 1em;
+}
+.desc{
+  margin-left: 2.3em;
+}
 
 .child {
     /*width: 100px;   Or whatever */

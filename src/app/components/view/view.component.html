@@ -5,12 +5,17 @@
     </div>
     </mat-list-item>
     <mat-card-content>
-      <mat-list-item>
-      <img align="left" mat-card-avatar class="icon" src="{{ this.icon + evento.icon}}">
-      <p align="right" hspace="40"> {{evento.tipo}}</p>
-      <h2 align="center">{{evento.name}}</h2>
-      <p align="center">{{evento.descripcion}}</p>
-    </mat-list-item>
+      <p align="right" hspace="40">
+         {{evento.tipo}}
+       </p>
+      <h2 class="nombre" align="justify">
+        <img align="left" hspace="20" mat-card-avatar class="icon" src="{{ this.icon + evento.icon}}">
+        {{evento.name}}
+      </h2>
+      <h4 class="desc" align="justify">
+        {{evento.descripcion}}
+      </h4>
+
     </mat-card-content>
     <mat-card-footer>
       <p class="paraph">Fecha de Inicio : {{evento.fecha_inicio}}</p>
