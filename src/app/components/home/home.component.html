@@ -19,17 +19,20 @@
   <!-- <br class="clearBoth" /> -->
 
 <!-- </div> -->
-<div class="container">
-  <div class="row searchFilter" >
-     <div class="col-sm-4" >
-      <div class="input-group" >
-       <input id="table_filter" type="text" class="form-control" aria-label="Text input with segmented button dropdown" [(ngModel)]="searchName" placeholder="Buscar Evento">
+<div class="container searchFilter">
+  <div class="">
+    <div class="box input-group">
+      <div class="container-1">
+        <span class="icon"><i class="fa fa-search"></i></span>
+        <input id="table_filter" type="search" class="form-control" [(ngModel)]="searchName" placeholder="Buscar Evento">
       </div>
-     </div>
+    </div>
   </div>
 </div>
 
-  <div class="container">
+
+
+<div class="container">
   <div class="card-columns" >
 
     <div class="card" *ngFor="let item of events | search: searchName ">
