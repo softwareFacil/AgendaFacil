@@ -5,9 +5,6 @@
     </div>
     </mat-list-item>
     <mat-card-content>
-      <p align="right" hspace="40">
-         {{evento.tipo}}
-       </p>
       <h2 class="nombre" align="justify">
         <img align="left" hspace="20" mat-card-avatar class="icon" src="{{ this.icon + evento.icon}}">
         {{evento.name}}
@@ -15,11 +12,15 @@
       <h4 class="desc" align="justify">
         {{evento.descripcion}}
       </h4>
-
     </mat-card-content>
     <mat-card-footer>
       <p class="paraph">Fecha de Inicio : {{evento.fecha_inicio}}</p>
       <p class="paraph">Fecha de termino : {{evento.fecha_termino}}</p>
+      <p align="center" style="margin-left: 5em;">
+      <mat-chip-list>
+      <mat-chip>{{evento.tipo}} </mat-chip>
+    </mat-chip-list>
+  </p>
       <div id="map"></div>
     </mat-card-footer>
   </mat-card>

@@ -11,7 +11,7 @@ import { GooglePlaceModule } from 'ng2-google-place-autocomplete';
 import { MatTableModule } from '@angular/material';
 import { LOCALE_ID } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatInputModule, MatChipsModule } from '@angular/material';
 import { MatAutocompleteModule } from '@angular/material';
 import { FormControl } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material';
@@ -73,6 +73,7 @@ import { SearchPipe } from './pipes/search.pipes';
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule,
+    MatChipsModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
