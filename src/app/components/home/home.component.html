@@ -37,7 +37,7 @@
 
     <div class="card" *ngFor="let item of events | search: searchName ">
 
-      <mat-card >
+      <mat-card (click)="descrip(item)">
 
         <mat-card-header class="cardH">
           <img mat-card-avatar src="{{ this.icon + item.icon}}">
@@ -48,9 +48,7 @@
         <img class="imgEvent" mat-card-image src="{{ this.img + item.image }}">
         <!--</mat-button-toggle>-->
         <mat-card-content>
-          <button mat-button (click)="descrip(item)">
           <h2>{{ item.name }}</h2>
-        </button>
         </mat-card-content>
 
       </mat-card>

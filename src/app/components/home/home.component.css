@@ -13,6 +13,7 @@
 .card{
   font-size: 4px;
   color: white !important;
+  cursor: pointer;
 }
 
 .cardH{
