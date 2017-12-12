@@ -9,3 +9,21 @@
 #map{
   height: 300px;
 }
+
+.parent {
+    display: flex;
+    /*height: 300px;  Or whatever */
+    background-color: #FFFFFF;
+}
+
+.child {
+    /*width: 100px;   Or whatever */
+    /*height: 100px;  Or whatever */
+    margin: auto;  /* Magic! */
+}
+
+.paraph {
+    display: block;
+    margin-left: 5em;
+    margin-right: 5em;
+}
