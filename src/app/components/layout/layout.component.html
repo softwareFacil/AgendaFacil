@@ -78,6 +78,13 @@
           </div>
 
           <div class="vertical-menu" routerLinkActive="active" *ngIf="identity.role == 'ROLE_ADMIN'">
+            <a class="vertical-menu-item" [routerLink]="['../newtype']">
+              <mat-icon>add</mat-icon>
+              Tipo de Organización
+            </a>
+          </div>
+
+          <div class="vertical-menu" routerLinkActive="active" *ngIf="identity.role == 'ROLE_ADMIN'">
             <a class="vertical-menu-item" [routerLink]="['../request']">
               <mat-icon>inbox</mat-icon>
               Solicitudes

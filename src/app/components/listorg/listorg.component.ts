@@ -23,8 +23,8 @@ export class ListorgComponent implements OnInit {
     private _router: Router,
     private snackBar: MatSnackBar
   ) {
-    this.user = new User( '', '', '', '', '', 'ROLE_USER', '', '', '', true );
-    this.data = [new User( '', '', '', '', '', 'ROLE_USER', '', '', '', true )];
+    this.user = new User( '', '', '', '', '', 'ROLE_USER', '', '', '', true, '' );
+    this.data = [new User( '', '', '', '', '', 'ROLE_USER', '', '', '', true, '' )];
   }
 
   ngOnInit() {

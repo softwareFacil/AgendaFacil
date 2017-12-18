@@ -11,6 +11,20 @@
     </mat-form-field>
 
     <mat-form-field class="event-full-width">
+      <!-- <input type="text" matInput
+      name="tipo" #tipo="ngModel" [(ngModel)]="event.tipo"> -->
+      <label>Tipo de Organización</label>
+      <input matInput aria-label="State" [matAutocomplete]="auto" [formControl]="stateCtrl"
+      name="tipo" #tipo [(ngModel)]="user.Type">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let state of filteredStates | async" [value]="state.nombre">
+          <span>{{ state.nombre }}</span>
+        </mat-option>
+      </mat-autocomplete>
+
+    </mat-form-field>
+
+    <mat-form-field class="event-full-width">
       <label>Descripcion</label> <input type="text" matInput required
       name="descripcion" #descripcion="ngModel" [(ngModel)]="user.descripcion">
     </mat-form-field>

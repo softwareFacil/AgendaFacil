@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     private snackBar: MatSnackBar
   ) {
     this.title = 'Identificate';
-    this.user = new User( '', '', '', '', '', 'ROLE_ADMIN', '', '', '', true );
+    this.user = new User( '', '', '', '', '', 'ROLE_ADMIN', '', '', '', true, '' );
   }
 
   ngOnInit() {

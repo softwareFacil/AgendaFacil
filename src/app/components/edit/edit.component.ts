@@ -126,20 +126,46 @@ export class EditComponent implements OnInit {
   }
 
   onSubmit(desc: string) {
+
+    let changeImage = false;
+
+    if (this.files) {
+      if (this.files[0].name != this.event.image) {
+          this.event.image = this.files[0].name;
+          changeImage = true;
+      }else{
+        changeImage = false;
+      }
+    }
+    console.log(changeImage)
+
     this.event.org = this.identity.name;
     this.event.icon = this.identity.foto;
     this.event.descripcion = desc;
     this.location.lat = this.event.ubicacion.lat;
     this.location.lng = this.event.ubicacion.long;
     this.location.name = this.event.ubicacion.nombre;
-    console.log(this.event)
     this._apiService.updateEvent(this.event,this.event._id).subscribe(
       response => {
         if (response.events) {
           this.snackBar.open(response.message, 'close', { duration: 5000 });
           this._apiService.saveLocation( this.location ).subscribe( response => {
+            if (changeImage) {
+              this._apiService.saveImg( [], this.files, 'image' )
+                  .then(( result: any ) => {
+                    this.event.image = result.image;
+                    this._apiService.updateEvent(this.event,this.event._id).subscribe();
+                  });
+            }
           });
         } else {
+          if (changeImage) {
+            this._apiService.saveImg( [], this.files, 'image' )
+                .then(( result: any ) => {
+                  this.event.image = result.image;
+                  this._apiService.updateEvent(this.event,this.event._id).subscribe();
+                });
+          }
           this.snackBar.open(response.message, 'close', { duration: 2500 });
         }
       }, error => {

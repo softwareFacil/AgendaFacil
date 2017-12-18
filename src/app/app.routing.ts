@@ -16,14 +16,21 @@ import { CategoryComponent } from './components/category/category.component';
 import { EditComponent } from './components/edit/edit.component';
 import { EditorgComponent } from './components/editorg/editorg.component';
 import { ListorgComponent } from './components/listorg/listorg.component';
+import { AddtypeorgComponent } from './components/addtypeorg/addtypeorg.component';
 
 
 const APP_ROUTES: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'request', component: RequestComponent },
-  { path: 'addcategory', component: AddcategoryComponent },
-  { path: 'addevents', component: AddeventsComponent },
+  { path: 'home', component: HomeComponent},
   { path: 'listcategory', component: ListcategoryComponent },
+  { path: 'admin', component: HomeComponent,
+    children:[
+      { path: 'addcategory', component: AddcategoryComponent },
+      { path: 'newtype', component: AddtypeorgComponent },
+      { path: 'request', component: RequestComponent },
+      { path: 'listorg', component: ListorgComponent },
+    ]},
+
+  { path: 'addevents', component: AddeventsComponent },
   { path: 'listevents', component: ListeventsComponent },
   { path: 'account', component: RequestaccountComponent },
   { path: 'login', component: LoginComponent },
@@ -31,7 +38,6 @@ const APP_ROUTES: Routes = [
   { path: 'category/:category', component: CategoryComponent },
   { path: 'edit/:id', component: EditComponent },
   { path: 'editorg/:id', component: EditorgComponent },
-  { path: 'listorg', component: ListorgComponent },
   { path: '**', pathMatch: 'full', component: HomeComponent },
 ];
 

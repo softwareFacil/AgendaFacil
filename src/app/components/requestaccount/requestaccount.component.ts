@@ -30,7 +30,7 @@ export class RequestaccountComponent implements OnInit {
     private _userService: UserService,
     private snackBar: MatSnackBar
   ) {
-    this.user = new User( '', '', '', '', '', 'ROLE_USER', '', '', '', false );
+    this.user = new User( '', '', '', '', '', 'ROLE_USER', '', '', '', false, '' );
   }
 
   ngOnInit() {
@@ -43,6 +43,7 @@ export class RequestaccountComponent implements OnInit {
 
   filterStates(nombre: string) {
     this.type = nombre;
+    this.user.Type = this.type;
     return this.types.filter(state =>
       state.nombre.toLowerCase().indexOf(nombre.toLowerCase()) === 0);
   }
@@ -73,6 +74,8 @@ export class RequestaccountComponent implements OnInit {
               this.user.foto = result.image;
               this._userService.saveUser( this.user ).subscribe(
                 response => {
+                  console.log(this.user)
+                  console.log(response.user)
                   if (response.user) {
                     console.log(response.message)
                     this.snackBar.open( response.message, 'close', { duration: 5000});
@@ -82,7 +85,7 @@ export class RequestaccountComponent implements OnInit {
                 });
              });
       }else{
-        this.snackBar.open( 'Seleccione un tipo de usuario valido', 'close', { duration: 5000});
+        this.snackBar.open( 'Seleccione un tipo de Organización valido', 'close', { duration: 5000});
       }
     }else{
       this.snackBar.open( 'Seleccione una imagen y/o complete los campos faltantes.', 'close', { duration: 5000});

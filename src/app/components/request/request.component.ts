@@ -20,8 +20,8 @@ export class RequestComponent implements OnInit {
     private _apiService: UserService,
     private snackBar: MatSnackBar
   ) {
-    this.user = new User( '', '', '', '', '', 'ROLE_USER', '', '', '', true );
-    this.data = [new User( '', '', '', '', '', 'ROLE_USER', '', '', '', true )];
+    this.user = new User( '', '', '', '', '', 'ROLE_USER', '', '', '', true, '' );
+    this.data = [new User( '', '', '', '', '', 'ROLE_USER', '', '', '', true, '' )];
   }
 
   ngOnInit() {

@@ -1,0 +1,19 @@
+<div id="enter">
+
+  <h1>Agregar nuevo tipo de organización</h1>
+
+  <hr>
+
+  <form eventForm="ngForm" (ngSubmit)="save()">
+    <mat-form-field class="event-full-width cat">
+      <label>Nombre del tipo de organización</label> <input type="text" matInput
+      name="Type" #Type="ngModel" [(ngModel)]="type.nombre">
+    </mat-form-field>
+
+    <br>
+
+    <button type="submit" mat-raised-button>Guardar</button>
+
+  </form>
+
+</div>

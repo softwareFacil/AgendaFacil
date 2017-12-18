@@ -39,6 +39,7 @@ import { EditorgComponent } from './components/editorg/editorg.component';
 
 //Servicios
 import { SearchPipe } from './pipes/search.pipes';
+import { AddtypeorgComponent } from './components/addtypeorg/addtypeorg.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { SearchPipe } from './pipes/search.pipes';
     EditComponent,
     ListorgComponent,
     EditorgComponent,
-    SearchPipe
+    SearchPipe,
+    AddtypeorgComponent
   ],
   imports: [
     AgmCoreModule.forRoot({

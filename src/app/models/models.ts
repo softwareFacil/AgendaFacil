@@ -9,7 +9,8 @@ export class User{
     public fono: string,
     public ubicacion: string,
     public foto: string,
-    public state: boolean
+    public state: boolean,
+    public Type: string
   ){}
 }
 
@@ -43,5 +44,11 @@ export class Location{
 export class Category{
   constructor(
     public actividades: string
+  ){}
+}
+
+export class Types{
+  constructor(
+    public nombre: string
   ){}
 }
