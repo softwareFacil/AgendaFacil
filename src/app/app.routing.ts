@@ -18,29 +18,34 @@ import { EditorgComponent } from './components/editorg/editorg.component';
 import { ListorgComponent } from './components/listorg/listorg.component';
 import { AddtypeorgComponent } from './components/addtypeorg/addtypeorg.component';
 
+//services
+import { AdminGuard } from './services/admin.guard';
+import { OrgGuard } from './services/org.guard';
+import { LoginGuard } from './services/login.guard';
 
 const APP_ROUTES: Routes = [
+  //Principal
   { path: 'home', component: HomeComponent},
   { path: 'listcategory', component: ListcategoryComponent },
-  { path: 'admin', component: HomeComponent,
-    children:[
-      { path: 'addcategory', component: AddcategoryComponent },
-      { path: 'newtype', component: AddtypeorgComponent },
-      { path: 'request', component: RequestComponent },
-      { path: 'listorg', component: ListorgComponent },
-    ]},
-
-  { path: 'addevents', component: AddeventsComponent },
-  { path: 'listevents', component: ListeventsComponent },
-  { path: 'account', component: RequestaccountComponent },
-  { path: 'login', component: LoginComponent },
+  //admin
+  { path: 'addcategory', canActivate: [AdminGuard], component: AddcategoryComponent },
+  { path: 'newtype', canActivate: [AdminGuard], component: AddtypeorgComponent },
+  { path: 'request', canActivate: [AdminGuard], component: RequestComponent },
+  { path: 'listorg', canActivate: [AdminGuard], component: ListorgComponent },
+  { path: 'editorg/:id', canActivate: [AdminGuard], component: EditorgComponent },
+  //org
+  { path: 'addevents', canActivate: [OrgGuard], component: AddeventsComponent },
+  { path: 'listevents', canActivate: [OrgGuard], component: ListeventsComponent },
+  { path: 'edit/:id', canActivate: [OrgGuard], component: EditComponent },
+  //normal
+  { path: 'account', canActivate: [LoginGuard], component: RequestaccountComponent },
+  { path: 'login', canActivate: [LoginGuard], component: LoginComponent },
   { path: 'view', component: ViewComponent },
   { path: 'category/:category', component: CategoryComponent },
-  { path: 'edit/:id', component: EditComponent },
-  { path: 'editorg/:id', component: EditorgComponent },
+  //Global
   { path: '**', pathMatch: 'full', component: HomeComponent },
 ];
 
 
 export const ROUTINGPROVIDERS: any[] = [];
-export const APP_ROUTING: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES, { useHash: true });
+export const APP_ROUTING: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES, { useHash: false });

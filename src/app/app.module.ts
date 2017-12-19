@@ -36,11 +36,14 @@ import { CategoryComponent } from './components/category/category.component';
 import { EditComponent } from './components/edit/edit.component';
 import { ListorgComponent } from './components/listorg/listorg.component';
 import { EditorgComponent } from './components/editorg/editorg.component';
+import { AddtypeorgComponent } from './components/addtypeorg/addtypeorg.component';
 
 //Servicios
 import { SearchPipe } from './pipes/search.pipes';
-import { AddtypeorgComponent } from './components/addtypeorg/addtypeorg.component';
-
+import { AdminGuard } from './services/admin.guard';
+import { OrgGuard } from './services/org.guard';
+import { LoginGuard } from './services/login.guard';
+import { UserService } from './services/api-rest.service';
 
 @NgModule({
   declarations: [
@@ -90,6 +93,10 @@ import { AddtypeorgComponent } from './components/addtypeorg/addtypeorg.componen
   ],
   // schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
+    AdminGuard,
+    OrgGuard,
+    LoginGuard,
+    UserService,
     { useClass: HashLocationStrategy, provide: LOCALE_ID, useValue: "es" }
   ],
   bootstrap: [ AppComponent ]
