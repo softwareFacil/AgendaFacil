@@ -40,7 +40,7 @@ const APP_ROUTES: Routes = [
   //normal
   { path: 'account', canActivate: [LoginGuard], component: RequestaccountComponent },
   { path: 'login', canActivate: [LoginGuard], component: LoginComponent },
-  { path: 'view', component: ViewComponent },
+  { path: 'view/:id', component: ViewComponent },
   { path: 'category/:category', component: CategoryComponent },
   //Global
   { path: '**', pathMatch: 'full', component: HomeComponent },

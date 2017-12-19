@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
   descrip(evento) {
     evento.lat = evento.ubicacion.lat;
     evento.long = evento.ubicacion.long;
-    this._router.navigate(['view/', evento]);
+    this._router.navigate(['view/' + evento._id]);
   }
 
 }
