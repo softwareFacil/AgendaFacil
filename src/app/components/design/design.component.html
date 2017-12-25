@@ -1,0 +1,40 @@
+<div class="body">
+  <div class="navbarImg">
+    <nav class="navbar navbar-expand-lg white darken-4 mt-2">
+      <a class="title"><img class="lg" src="/assets/img/logo.svg" width="10%"> PUBLIBARRIO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar5">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar5">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['../home']" ><i class="fa fa-home"></i> Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['../actividades']"><i class="fa fa-calendar"></i> Actividades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link white" ><i class="fa fa-map-o" aria-hidden="true"></i> Mapa</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">
+              <i class="fa fa-cog"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
+              <a class="dropdown-item" [routerLink]="['../login']" *ngIf="!identity">Ingresar</a>
+              <a class="dropdown-item" *ngIf="identity">Perfil</a>
+              <div class="dropdown-divider" *ngIf="identity"></div>
+              <a class="dropdown-item logout" (click)="logout()" *ngIf="identity">Salir</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="body-content" style="overflow-y: scroll;">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

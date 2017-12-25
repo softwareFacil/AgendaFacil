@@ -26,7 +26,7 @@ import { LoginGuard } from './services/login.guard';
 const APP_ROUTES: Routes = [
   //Principal
   { path: 'home', component: HomeComponent},
-  { path: 'listcategory', component: ListcategoryComponent },
+  { path: 'actividades', component: ListcategoryComponent },
   //admin
   { path: 'addcategory', canActivate: [AdminGuard], component: AddcategoryComponent },
   { path: 'newtype', canActivate: [AdminGuard], component: AddtypeorgComponent },

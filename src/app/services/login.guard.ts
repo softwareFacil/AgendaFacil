@@ -15,9 +15,9 @@ export class LoginGuard implements CanActivate{
 
     if (identity) {
       this._router.navigate(['/Home']);
-      return true;
-    }else{
       return false;
+    }else{
+      return true;
     }
   }
 

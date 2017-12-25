@@ -44,6 +44,7 @@ import { AdminGuard } from './services/admin.guard';
 import { OrgGuard } from './services/org.guard';
 import { LoginGuard } from './services/login.guard';
 import { UserService } from './services/api-rest.service';
+import { DesignComponent } from './components/design/design.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { UserService } from './services/api-rest.service';
     ListorgComponent,
     EditorgComponent,
     SearchPipe,
-    AddtypeorgComponent
+    AddtypeorgComponent,
+    DesignComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
