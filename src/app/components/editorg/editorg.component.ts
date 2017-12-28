@@ -20,6 +20,7 @@ export class EditorgComponent implements OnInit {
   public user;
   public files;
   public type;
+  public identity;
   stateCtrl: FormControl;
   filteredStates: Observable<any[]>;
 
@@ -31,6 +32,7 @@ export class EditorgComponent implements OnInit {
     private _userService: UserService,
     private snackBar: MatSnackBar
   ) {
+    this.identity = _userService.getIdentity();
     this._id = _activateRouter.snapshot.paramMap.get('id');
     this.user = new User( '', '', '', '', '', 'ROLE_USER', '', '', '', false, '' );
   }

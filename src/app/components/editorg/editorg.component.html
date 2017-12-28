@@ -63,7 +63,12 @@
 
     <br>
 
-    <button type="submit" mat-raised-button>Guardar</button>
+    <div *ngIf="identity._id == _id">
+      <button type="submit" mat-raised-button [routerLink]="['../../perfil']">Guardar</button>
+    </div>
+    <div *ngIf="identity._id != _id">
+      <button type="submit" mat-raised-button [routerLink]="['../../listorg']">Guardar</button>
+    </div>
 
   </form>
 
