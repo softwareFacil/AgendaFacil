@@ -2,7 +2,7 @@ import { Component, ElementRef, NgZone, OnInit, ViewChild, AfterViewInit } from 
 import { FormControl } from '@angular/forms';
 import { Events, Location } from '../../models/models';
 import { UserService } from '../../services/api-rest.service';
-
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
@@ -46,7 +46,8 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
     private _userService: UserService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private _router: Router
   ) {
     this.event = new Events('', 'test', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
     this.location = new Location( 0, 0, '' );
@@ -149,7 +150,7 @@ export class AddeventsComponent implements OnInit, AfterViewInit {
                   this.status = 'El registro se a realizado correctamente';
                   console.log(response.message);
                   this.snackBar.open(response.message, 'close', { duration: 5000 });
-                  this.event = new Events('', '', '', { lat: 0, long: 0, nombre: '' }, '', '', '', '', '', '');
+                  this._router.navigate([ 'panel' ]);
                   console.log(this.location)
                   this._userService.saveLocation( this.location ).subscribe( response => {
                     console.log(response);
