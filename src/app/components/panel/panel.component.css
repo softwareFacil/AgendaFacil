@@ -1,0 +1,58 @@
+.marCont{
+  margin-top: 70px;
+}
+
+.container{
+  width: 950px;
+}
+
+.card{
+  margin: 5px;
+  width: 220px;
+  color: black !important;
+}
+
+.card-title{
+  font-weight: 200 !important;
+}
+
+.card-text{
+  font-size: 28px;
+}
+
+.card-disaster{
+  width: 980px;
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+
+.card-disaster2{
+  width: 500px;
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+
+.container-title{
+  width: 330px;
+  position: relative;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title{
+  font-size: 30px !important;
+  color: black !important;
+}
+
+button{
+  background-color: white;
+  color: black;
+  border: none !important;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: #ff5733;
+  color: white;
+}

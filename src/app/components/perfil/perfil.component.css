@@ -1,0 +1,54 @@
+.container-left{
+  height: 450px;
+  width: 300px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+  margin-top: 70px;
+  margin-bottom: 20px;
+  float: left;
+  margin-left: 100px;
+  margin-right: auto;
+}
+
+.container-right{
+  height: 450px;
+  width: 650px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+  margin-top: 70px;
+  margin-bottom: 20px;
+  float: right;
+  margin-right: 100px;
+  margin-left: auto;
+}
+
+.colorHeader{
+  background-color: #ff5733;
+}
+
+.title{
+  margin-left: 30px;
+}
+
+.info1{
+  margin-top: 70px;
+  margin-left: 80px;
+  float: left;
+}
+.info2{
+  margin-top: 70px;
+  margin-right: 80px;
+  float: right;
+}
+
+.datas{
+  margin-top: 30px;
+}
+
+.editB{
+  margin-top: 30px;
+}
+
+button{
+  width: 200px;
+}

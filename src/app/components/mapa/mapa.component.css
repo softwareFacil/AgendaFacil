@@ -1,0 +1,14 @@
+.container{
+  margin-top: 70px;
+  background-color: white;
+  width: 900px;
+  height: 500px;
+  -webkit-box-shadow: 0 10px 12px -1px rgba(0,0,0,0.08),0 2px 8px -1px rgba(0,0,0,0.08);
+  -moz-box-shadow: 0 10px 12px -1px rgba(0,0,0,0.08),0 2px 8px -1px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 12px -1px rgba(0,0,0,0.08),0 2px 8px -1px rgba(0,0,0,0.08);
+}
+#map{
+  right: 20px;
+  width: 905px;
+  height: 500px;
+}

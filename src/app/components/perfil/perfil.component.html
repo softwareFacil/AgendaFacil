@@ -1,0 +1,57 @@
+<div class="container-left">
+  <div class="card card-testimonial text-center">
+    <div class="card-header colorHeader lighten-3">
+      <img src="{{ this.icon + identity.foto }}" alt="Card image cap">
+    </div>
+    <div class="card-body">
+      <h4 class="card-title mt-5 mb-0">{{identity.name}}</h4>
+      <p class="text-muted">{{identity.Type}}</p>
+      <hr>
+      <div class=""style="height: 140px; overflow-y: scroll;">
+        <p class="card-text">{{identity.descripcion}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-right">
+  <div class="">
+    <h4 class="mt-5 mb-0 title">INFORMACIÓN</h4>
+  </div>
+  <div class="info1">
+    <div class="datas">
+      <h6>Tipo de Cuenta</h6>
+      <div *ngIf="identity.role == 'ROLE_ADMIN'">
+        Administrador
+      </div>
+      <div *ngIf="identity.role == 'ROLE_USER'">
+        Organización
+      </div>
+    </div>
+    <div class="datas">
+      <h6>Correo</h6>
+      <a>{{identity.email}}</a>
+    </div>
+    <div class="datas">
+      <h6>Telefono</h6>
+      <a>{{identity.fono}}</a>
+    </div>
+  </div>
+  <div class="info2">
+    <div class="datas">
+      <h6>Dirección</h6>
+      <a>{{identity.ubicacion}}</a>
+    </div>
+    <div *ngIf="identity.role == 'ROLE_USER'">
+      <div class="datas">
+        <h6>Tipo de Organización</h6>
+        <a>{{identity.Type}}</a>
+      </div>
+    </div>
+    <div class="editB">
+      <button type="button" class="btn btn-primary" name="button" (click)='edit(identity._id)'>Editar</button>
+    </div>
+  </div>
+
+
+</div>

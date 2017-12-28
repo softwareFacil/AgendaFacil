@@ -1,0 +1,70 @@
+<div class="marCont">
+  <div class="container card-group card-disaster" *ngIf="identity.role == 'ROLE_ADMIN'">
+
+    <div class="Agregar-categoria">
+      <div class="card text-white mb-3">
+        <div class="card-body">
+          <h4 class="card-title"><i class="fa fa-plus" aria-hidden="true"></i> Agregar Categoria</h4>
+          <hr>
+          <button type="button" class="btn btn-primary" name="button" [routerLink]="['../addcategory']">Seleccionar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="Agregar-Oraganizacion">
+      <div class="card text-white mb-3">
+        <div class="card-body">
+          <h4 class="card-title"><i class="fa fa-plus" aria-hidden="true"></i> Agregar tipo de Organización</h4>
+          <hr>
+          <button type="button" class="btn btn-primary" name="button" [routerLink]="['../newtype']">Seleccionar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="Solicitudes">
+      <div class="card text-white mb-3">
+        <div class="card-body">
+          <h4 class="card-title"><i class="fa fa-inbox" aria-hidden="true"></i> Solicitudes</h4>
+          <hr>
+          <button type="button" class="btn btn-primary" name="button" [routerLink]="['../request']">Seleccionar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="Lista-Usuario">
+      <div class="card text-white mb-3">
+        <div class="card-body">
+          <h4 class="card-title"><i class="fa fa-users" aria-hidden="true"></i> Lista de Usuarios</h4>
+          <hr>
+          <button type="button" class="btn btn-primary" name="button" [routerLink]="['../listorg']">Seleccionar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container card-group card-disaster2" *ngIf="identity.role == 'ROLE_USER'">
+
+    <div class="Agregar-evento">
+      <div class="card text-white mb-3">
+        <div class="card-body">
+          <h4 class="card-title"><i class="fa fa-plus" aria-hidden="true"></i> Agregar Evento</h4>
+          <hr>
+          <button type="button" class="btn btn-primary" name="button" [routerLink]="['../addevents']">Seleccionar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="Lista-Eventos">
+      <div class="card text-white mb-3">
+        <div class="card-body">
+          <h4 class="card-title"><i class="fa fa-list" aria-hidden="true"></i> Lista de Eventos</h4>
+          <hr>
+          <button type="button" class="btn btn-primary" name="button" [routerLink]="['../listevents']">Seleccionar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

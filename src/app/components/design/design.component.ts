@@ -32,4 +32,8 @@ export class DesignComponent implements OnInit {
     this._router.navigate([ 'home' ]);
   }
 
+  // edit(id){
+  //   this._router.navigate([ 'editorg/' + id ]);
+  // }
+
 }

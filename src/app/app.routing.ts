@@ -17,6 +17,9 @@ import { EditComponent } from './components/edit/edit.component';
 import { EditorgComponent } from './components/editorg/editorg.component';
 import { ListorgComponent } from './components/listorg/listorg.component';
 import { AddtypeorgComponent } from './components/addtypeorg/addtypeorg.component';
+import { MapaComponent } from './components/mapa/mapa.component';
+import { PanelComponent } from './components/panel/panel.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 //services
 import { AdminGuard } from './services/admin.guard';
@@ -27,12 +30,13 @@ const APP_ROUTES: Routes = [
   //Principal
   { path: 'home', component: HomeComponent},
   { path: 'actividades', component: ListcategoryComponent },
+  { path: 'mapa', component: MapaComponent },
   //admin
   { path: 'addcategory', canActivate: [AdminGuard], component: AddcategoryComponent },
   { path: 'newtype', canActivate: [AdminGuard], component: AddtypeorgComponent },
   { path: 'request', canActivate: [AdminGuard], component: RequestComponent },
   { path: 'listorg', canActivate: [AdminGuard], component: ListorgComponent },
-  { path: 'editorg/:id', canActivate: [AdminGuard], component: EditorgComponent },
+  { path: 'editorg/:id', component: EditorgComponent },
   //org
   { path: 'addevents', canActivate: [OrgGuard], component: AddeventsComponent },
   { path: 'listevents', canActivate: [OrgGuard], component: ListeventsComponent },
@@ -40,6 +44,8 @@ const APP_ROUTES: Routes = [
   //normal
   { path: 'account', canActivate: [LoginGuard], component: RequestaccountComponent },
   { path: 'login', canActivate: [LoginGuard], component: LoginComponent },
+  { path: 'perfil', component: PerfilComponent },
+  { path: 'panel', component: PanelComponent },
   { path: 'view/:id', component: ViewComponent },
   { path: 'category/:category', component: CategoryComponent },
   //Global

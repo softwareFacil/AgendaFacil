@@ -15,17 +15,21 @@
             <a class="nav-link" [routerLink]="['../actividades']"><i class="fa fa-calendar"></i> Actividades</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link white" ><i class="fa fa-map-o" aria-hidden="true"></i> Mapa</a>
+            <a class="nav-link" [routerLink]="['../mapa']"><i class="fa fa-map-o" aria-hidden="true"></i> Mapa</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">
-              <i class="fa fa-cog"></i>
+            <div class="nav-item" *ngIf="!identity">
+              <a class="nav-link" [routerLink]="['../login']" *ngIf="!identity"> <i class="fa fa-sign-in" aria-hidden="true"></i> Ingresar</a>
+            </div>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" *ngIf="identity">
+                <i class="fa fa-user-o"></i> {{identity.name}}
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
-              <a class="dropdown-item" [routerLink]="['../login']" *ngIf="!identity">Ingresar</a>
-              <a class="dropdown-item" *ngIf="identity">Perfil</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" *ngIf="identity">
+              <a class="dropdown-item" [routerLink]="['../perfil']" *ngIf="identity"><i class="fa fa-address-card-o" aria-hidden="true"></i> Perfil</a>
+              <a class="dropdown-item" [routerLink]="['../panel']" *ngIf="identity && identity.role == 'ROLE_ADMIN'"><i class="fa fa-cog" aria-hidden="true"></i> Panel de Administrador</a>
+              <a class="dropdown-item" [routerLink]="['../panel']" *ngIf="identity && identity.role == 'ROLE_USER'"><i class="fa fa-cog" aria-hidden="true"></i> Panel de Organización</a>
               <div class="dropdown-divider" *ngIf="identity"></div>
-              <a class="dropdown-item logout" (click)="logout()" *ngIf="identity">Salir</a>
+              <a class="dropdown-item logout" (click)="logout()" *ngIf="identity"><i class="fa fa-sign-out" aria-hidden="true"></i> Salir</a>
             </div>
           </li>
         </ul>

@@ -45,6 +45,9 @@ import { OrgGuard } from './services/org.guard';
 import { LoginGuard } from './services/login.guard';
 import { UserService } from './services/api-rest.service';
 import { DesignComponent } from './components/design/design.component';
+import { PanelComponent } from './components/panel/panel.component';
+import { MapaComponent } from './components/mapa/mapa.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +68,10 @@ import { DesignComponent } from './components/design/design.component';
     EditorgComponent,
     SearchPipe,
     AddtypeorgComponent,
-    DesignComponent
+    DesignComponent,
+    PanelComponent,
+    MapaComponent,
+    PerfilComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
